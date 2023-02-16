@@ -15,7 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_pr43d")
-play_scene = "res://Game/Fully3DWorld/testing_3d_world.tscn"
+play_scene = "res://Game/Scenes/Levels/main_level.tscn"
 options_scene = "res://Menus/options_menu.tscn"
 credits_scene = "res://Menus/credits_scene.tscn"
 

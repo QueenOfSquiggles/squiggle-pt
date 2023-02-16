@@ -11,15 +11,17 @@ config_version=5
 [DynamicContentLoading]
 
 links/webpage_root="https://queenofsquiggles.github.io/data/"
-links/game_id="default-game-id"
+links/game_id="squiggle-pt"
 cache/use_cache=true
 cache/content_auto_refresh=true
 
 [application]
 
-config/name="SquiggleZone Game Base"
+config/name="Squiggle PT"
+config/description="A small PT-like game for testing out my game base and finding opportunities to expand upon it"
 run/main_scene="res://LaunchAnimation/launch_sequence.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
