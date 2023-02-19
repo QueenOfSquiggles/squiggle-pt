@@ -1,70 +1,163 @@
-[gd_scene load_steps=7 format=3 uid="uid://di2bprwg106to"]
+[gd_scene load_steps=24 format=3 uid="uid://p7ohmr0keb3r"]
 
-[ext_resource type="PackedScene" uid="uid://xawyxr6bcwo2" path="res://Game/Assets/Models/hallway.glb" id="1_ahcaj"]
+[ext_resource type="PackedScene" uid="uid://268fgn52rnve" path="res://Game/Assets/Models/Hallway/hallway.glb" id="1_2p8e8"]
 [ext_resource type="PackedScene" uid="uid://e2sjrp7dx214" path="res://SquiggleZonePrefabs/FPS_Player/first_person_character_controller.tscn" id="2_jdf8f"]
 [ext_resource type="PackedScene" uid="uid://cldfwleycb65b" path="res://SquiggleZonePrefabs/CameraUtilities/camera_brain.tscn" id="3_vbpup"]
 [ext_resource type="PackedScene" uid="uid://bjc5164lfglwe" path="res://Menus/pause_menu_controller.tscn" id="4_lwwvd"]
 [ext_resource type="PackedScene" uid="uid://b7wsrfo7q8m2k" path="res://SquiggleZonePrefabs/Environment/world_env_settings_compliant.tscn" id="5_4qf66"]
+[ext_resource type="PackedScene" uid="uid://bl0j8r0p8h1ka" path="res://Game/Assets/Models/Decoration/modern_arm_chair_01_2k.gltf" id="6_ifqka"]
+[ext_resource type="PackedScene" uid="uid://bap8s7k0my7g3" path="res://Game/Assets/Models/Decoration/cardboard_box_01_2k.gltf" id="7_3g30b"]
+[ext_resource type="PackedScene" uid="uid://22koqbxpaybv" path="res://Game/Assets/Models/Decoration/Chandelier_03_2k.gltf" id="8_grlah"]
+[ext_resource type="PackedScene" uid="uid://cxysv1c8c6oof" path="res://Game/Assets/Models/Decoration/fancy_picture_frame_01_2k.gltf" id="9_85s7b"]
+[ext_resource type="PackedScene" uid="uid://c7ikylq50b8xj" path="res://Game/Assets/Models/Decoration/small_wooden_table_01_2k.gltf" id="10_cire5"]
+[ext_resource type="PackedScene" uid="uid://b3kyl8fil6xg3" path="res://Game/Assets/Models/Decoration/standing_picture_frame_02_2k.gltf" id="11_03mmp"]
+[ext_resource type="PackedScene" uid="uid://doiyla3g3ved1" path="res://Game/Assets/Models/Decoration/steel_frame_shelves_01_2k.gltf" id="12_5vgfd"]
+[ext_resource type="PackedScene" uid="uid://dd4gv0ntn0qgk" path="res://Game/Assets/Models/Decoration/wooden_table_02_2k.gltf" id="12_mret4"]
+[ext_resource type="PackedScene" uid="uid://5yv5sos5ay8f" path="res://Game/Assets/Models/Decoration/potted_plant_01_2k.gltf" id="13_qqj5o"]
+[ext_resource type="PackedScene" uid="uid://8iki503fjoge" path="res://Game/Assets/Models/Decoration/power_box_01_2k.gltf" id="14_skg11"]
+[ext_resource type="PackedScene" uid="uid://cibmovpvstwq0" path="res://Game/Assets/Models/Decoration/Camera_01_2k.gltf" id="15_u2q5q"]
+[ext_resource type="PackedScene" uid="uid://0rwox2bidn4d" path="res://Game/Assets/Models/Decoration/alarm_clock_01_2k.gltf" id="16_usaio"]
+[ext_resource type="PackedScene" uid="uid://b5vj05v5c02ht" path="res://Game/Assets/Models/Decoration/vintage_grandfather_clock_01_2k.gltf" id="17_a5e3k"]
+[ext_resource type="PackedScene" uid="uid://u1ag38a6fdyl" path="res://Game/Assets/Models/Decoration/vintage_crutches_01_2k.gltf" id="18_37fuc"]
+[ext_resource type="PackedScene" uid="uid://bwbsgt7ulnaee" path="res://Game/Assets/Models/Decoration/tire_pump_2k.gltf" id="19_2d0xl"]
+[ext_resource type="PackedScene" uid="uid://bh67eja1gq00d" path="res://Game/Assets/Models/Decoration/steel_frame_shelves_02_2k.gltf" id="20_ov8fo"]
 
 [sub_resource type="VoxelGIData" id="VoxelGIData_clt24"]
 _data = {
-"bounds": AABB(-7.37435, -2.52079, -4.4919, 14.7487, 5.04158, 8.9838),
+"bounds": AABB(-7.65079, -2.52079, -4.4919, 15.3016, 5.04158, 8.9838),
 "level_counts": PackedInt32Array(1, 0, 0, 0, 0, 0, 0, 0),
 "octree_cells": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "octree_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "octree_df_png": PackedByteArray(137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 13, 73, 72, 68, 82, 0, 0, 32, 0, 0, 0, 0, 128, 8, 0, 0, 0, 0, 134, 204, 184, 193, 0, 0, 0, 1, 115, 82, 71, 66, 0, 174, 206, 28, 233, 0, 0, 5, 77, 73, 68, 65, 84, 120, 156, 237, 218, 49, 13, 0, 32, 0, 192, 48, 192, 191, 103, 16, 193, 65, 88, 90, 5, 19, 176, 185, 7, 0, 0, 0, 0, 0, 0, 0, 240, 187, 245, 58, 0, 0, 0, 0, 0, 0, 0, 0, 184, 103, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 12, 0, 0, 0, 0, 0, 0, 0, 0, 16, 96, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 4, 24, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 8, 48, 0, 0, 0, 0, 0, 0, 0, 0, 64, 192, 1, 39, 31, 1, 255, 252, 57, 104, 57, 0, 0, 0, 0, 73, 69, 78, 68, 174, 66, 96, 130),
 "octree_size": Vector3(128, 64, 128),
-"to_cell_xform": Transform3D(8.67873, 0, 0, 0, 8.67873, 0, 0, 0, 8.67873, 64, 21.8773, 38.984)
+"to_cell_xform": Transform3D(8.36515, 0, 0, 0, 8.36515, 0, 0, 0, 8.36515, 64, 21.0868, 37.5754)
 }
 propagation = 0.79
 use_two_bounces = false
 interior = true
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_6wpk0"]
+size = Vector2(1, 1)
+
 [node name="MainLevel" type="Node3D"]
 
-[node name="hallway" parent="." instance=ExtResource("1_ahcaj")]
+[node name="hallway" parent="." instance=ExtResource("1_2p8e8")]
 
 [node name="First Person Character Controller" parent="." instance=ExtResource("2_jdf8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05637, 0.081841, 1.8896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.20157, -0.0141019, 2.10876)
 speed = 1.0
-acceleration = 1.0
 
 [node name="CameraBrain" parent="." instance=ExtResource("3_vbpup")]
+transform = Transform3D(0.4214, 0, 0.906875, 0, 1, 0, -0.906875, 0, 0.4214, 0.694782, 0.790185, 0.45533)
 
 [node name="PauseMenuController" parent="." instance=ExtResource("4_lwwvd")]
 
 [node name="Decor" type="Node3D" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Decor"]
+[node name="Lights" type="Node3D" parent="Decor"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Decor/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64009, 1.51193, 1.51975)
 light_bake_mode = 1
 shadow_enabled = true
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Decor"]
+[node name="OmniLight3D8" type="OmniLight3D" parent="Decor/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0508864, 1.51193, -0.396403)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Decor/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91157, 1.51193, 1.51975)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Decor/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73497, 1.51193, 2.02776)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Decor/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.440952, 1.51193, 3.05914)
 light_bake_mode = 1
 shadow_enabled = true
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Decor"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Decor/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.35254, 1.51193, -1.66901)
 light_bake_mode = 1
 shadow_enabled = true
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Decor"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Decor/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0389, 1.51193, 2.08524)
 light_bake_mode = 1
 shadow_enabled = true
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Decor"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Decor/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6355, 3.18907, -0.820767)
 light_bake_mode = 1
 shadow_enabled = true
+
+[node name="Objects" type="Node3D" parent="Decor"]
+
+[node name="modern_arm_chair_01_2k" parent="Decor/Objects" instance=ExtResource("6_ifqka")]
+transform = Transform3D(0.880973, 0, -0.473166, 0, 1, 0, 0.473166, 0, 0.880973, 4.86577, 0.00771761, 2.20815)
+
+[node name="cardboard_box_01_2k" parent="Decor/Objects" instance=ExtResource("7_3g30b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46959, 0.00344633, -1.88843)
+
+[node name="cardboard_box_01_2k2" parent="Decor/Objects" instance=ExtResource("7_3g30b")]
+transform = Transform3D(0.814996, 0, -0.579466, 0, 1, 0, 0.579466, 0, 0.814996, 7.46489, 0.00344627, -1.29681)
+
+[node name="Chandelier_03_2k" parent="Decor/Objects" instance=ExtResource("8_grlah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53274, 3.95307, -0.630762)
+
+[node name="fancy_picture_frame_01_2k" parent="Decor/Objects" instance=ExtResource("9_85s7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.99539, 1.10592, -2.38247)
+
+[node name="small_wooden_table_01_2k" parent="Decor/Objects" instance=ExtResource("10_cire5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.36848, 0.00727135, 1.66106)
+
+[node name="standing_picture_frame_02_2k" parent="Decor/Objects" instance=ExtResource("11_03mmp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38758, 0.536029, 1.87723)
+
+[node name="steel_frame_shelves_01_2k" parent="Decor/Objects" instance=ExtResource("12_5vgfd")]
+transform = Transform3D(0, 0, -0.0712192, 0, 0.0712192, 0, 0.0712192, 0, 0, -0.249383, 0.0128609, -0.0512341)
+
+[node name="wooden_table_02_2k" parent="Decor/Objects" instance=ExtResource("12_mret4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63769, 0.00902387, 3.22327)
+
+[node name="potted_plant_01_2k" parent="Decor/Objects" instance=ExtResource("13_qqj5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33975, 1.19209e-07, 3.32499)
+
+[node name="power_box_01_2k" parent="Decor/Objects" instance=ExtResource("14_skg11")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.95372, 1.50624, 3.66872)
+
+[node name="Camera_01_2k" parent="Decor/Objects" instance=ExtResource("15_u2q5q")]
+transform = Transform3D(-0.774812, 0, -0.632192, 0, 1, 0, 0.632192, 0, -0.774812, 5.01203, 0.802894, 3.21933)
+
+[node name="alarm_clock_01_2k" parent="Decor/Objects" instance=ExtResource("16_usaio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.29313, 0.803131, 3.44602)
+
+[node name="vintage_grandfather_clock_01_2k" parent="Decor/Objects" instance=ExtResource("17_a5e3k")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.993954, 0.0103365, 3.19931)
+
+[node name="vintage_crutches_01_2k" parent="Decor/Objects" instance=ExtResource("18_37fuc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04171, 0.0133715, 3.74058)
+
+[node name="tire_pump_2k" parent="Decor/Objects" instance=ExtResource("19_2d0xl")]
+transform = Transform3D(0.948107, 0, -0.31795, 0, 1, 0, 0.31795, 0, 0.948107, 0.987748, 0.00158459, 2.82356)
+
+[node name="steel_frame_shelves_02_2k" parent="Decor/Objects" instance=ExtResource("20_ov8fo")]
+transform = Transform3D(-3.29201e-08, 0, -0.753124, 0, 0.753124, 0, 0.753124, 0, -3.29201e-08, 0.937263, -0.0202485, 2.45298)
 
 [node name="graphics" type="Node3D" parent="."]
 
 [node name="WorldEnv_SettingsCompliant" parent="graphics" instance=ExtResource("5_4qf66")]
 
 [node name="VoxelGI" type="VoxelGI" parent="graphics"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83255, 1.95676, 1.86583)
-size = Vector3(14.7487, 5.04158, 8.9838)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57034, 1.95676, 1.86583)
+size = Vector3(15.3016, 5.04158, 8.9838)
 data = SubResource("VoxelGIData_clt24")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.07738, 0, 0)
+mesh = SubResource("PlaneMesh_6wpk0")

@@ -140,3 +140,7 @@ ui_cycle_right={
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true

@@ -45,6 +45,7 @@ raycast_path = NodePath("CameraArm/VirtualCamera/InteractionRay")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.801277, 0)
 material_override = SubResource("StandardMaterial3D_5bput")
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_egvq0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

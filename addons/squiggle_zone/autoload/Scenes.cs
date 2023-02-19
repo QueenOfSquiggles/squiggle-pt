@@ -26,22 +26,24 @@ public partial class Scenes : Node
             return;
         }
 
+        Print.Info($"Starting load scene: {file_path}");
         await FadeOut();
 
         if (ResourceLoader.LoadThreadedGet(file_path) is not PackedScene scene)
         {
-            Print.Error($"Failed to get scene resource. Found null. Path='{file_path}'");
+            Print.Error($"Failed to get scene resource. Path='{file_path}'");
             return;
         }
         _LoadSceneImmediate(scene);
     }
 
     public static void LoadSceneImmediate(PackedScene scene) => Instance._LoadSceneImmediate(scene);
-    private void _LoadSceneImmediate(PackedScene scene)
+    private async void _LoadSceneImmediate(PackedScene scene)
     {
         if (scene == null) return;
         GetTree().ChangeSceneToPacked(scene);
-        FadeIn();
+        await FadeIn();
+        Print.Info($"Finished loading scene: {scene.ResourcePath}");
     }
 
     private SignalAwaiter FadeOut()
