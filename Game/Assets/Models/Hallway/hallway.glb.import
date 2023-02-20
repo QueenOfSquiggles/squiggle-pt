@@ -30,7 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Plane": {
+"PATH:HallwayMesh": {
 "generate/navmesh": 1,
 "generate/occluder": 1,
 "generate/physics": true,
