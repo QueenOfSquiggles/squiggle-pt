@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvngsk22tfgnt"]
+
+[ext_resource type="PackedScene" uid="uid://boeg277h5qm4e" path="res://Game/Assets/Models/Decoration/marble_bust_01_2k.gltf" id="1_p34s8"]
+[ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="2_r7wyh"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="3_v5jjl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gul8i"]
+size = Vector3(0.49379, 0.750454, 0.498405)
+
+[node name="MarbleBustProp" instance=ExtResource("1_p34s8")]
+
+[node name="Bust" parent="." index="1" instance=ExtResource("2_r7wyh")]
+custom_name = "Marble Bust"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bust" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.250548, 0)
+shape = SubResource("BoxShape3D_gul8i")
+
+[node name="PropManager" parent="." index="2" instance=ExtResource("3_v5jjl")]
+active_stage = 11
+path_mesh_instance = NodePath("../marble_bust_01")
+path_interaction_trigger = NodePath("../Bust")

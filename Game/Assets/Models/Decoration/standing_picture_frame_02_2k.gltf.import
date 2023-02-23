@@ -29,6 +29,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
+"materials": {
+"standing_picture_frame_02_glass": {
+"use_external/enabled": true,
+"use_external/path": "res://Game/Assets/ShaderMaterials/GlassReplacement.tres"
+}
+},
 "nodes": {
 "PATH:standing_picture_frame_02": {
 "generate/physics": true

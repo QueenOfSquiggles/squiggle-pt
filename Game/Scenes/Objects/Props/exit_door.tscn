@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://rdin6aonmngc"]
+
+[ext_resource type="PackedScene" uid="uid://b2vxgdunxwtet" path="res://Game/Scenes/Objects/WorkingDoorway.tscn" id="1_0yn0t"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="2_5eub3"]
+[ext_resource type="Material" uid="uid://cvluek2ywidku" path="res://Game/Assets/ShaderMaterials/ItemHighlightMaterial.tres" id="2_a1abu"]
+
+[node name="ExitDoor" instance=ExtResource("1_0yn0t")]
+
+[node name="Door" parent="." index="0"]
+material_overlay = ExtResource("2_a1abu")
+
+[node name="PropManager" parent="." index="4" instance=ExtResource("2_5eub3")]
+active_stage = 12
+path_mesh_instance = NodePath("../Door")
+path_interaction_trigger = NodePath("../Door/Open Door")

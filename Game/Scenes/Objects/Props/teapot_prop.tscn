@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://yv6otcbafoga"]
+
+[ext_resource type="PackedScene" uid="uid://ji85fwcf1lco" path="res://Game/Assets/Models/Decoration/tea_set_01_2k.gltf" id="1_rgs8e"]
+[ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="2_skm1b"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="3_p6as3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f443f"]
+size = Vector3(0.375867, 0.265085, 0.55391)
+
+[node name="TeapotProp" instance=ExtResource("1_rgs8e")]
+
+[node name="tea_set_01_plate_large_square_01" parent="." index="0"]
+visible = false
+
+[node name="tea_set_01_cup_small_01" parent="." index="1"]
+visible = false
+
+[node name="tea_set_01_saucer_circular_03" parent="." index="2"]
+visible = false
+
+[node name="tea_set_01_plate_large_circular_03" parent="." index="3"]
+visible = false
+
+[node name="tea_set_01_sugar_cup_01" parent="." index="4"]
+visible = false
+
+[node name="tea_set_01_teapot_01" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tea_set_01_cup_small_02" parent="." index="6"]
+visible = false
+
+[node name="tea_set_01_saucer_circular_04" parent="." index="7"]
+visible = false
+
+[node name="tea_set_01_sugar_cup_01_lid" parent="." index="8"]
+visible = false
+
+[node name="tea_set_01_teapot_01_lid" parent="." index="9"]
+visible = false
+
+[node name="Teapot" parent="." index="10" instance=ExtResource("2_skm1b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teapot" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0692387, 0)
+shape = SubResource("BoxShape3D_f443f")
+
+[node name="PropManager" parent="." index="11" instance=ExtResource("3_p6as3")]
+active_stage = 3
+path_mesh_instance = NodePath("../tea_set_01_teapot_01")
+path_interaction_trigger = NodePath("../Teapot")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmph8csnnblv7"]
+
+[ext_resource type="PackedScene" uid="uid://bwbsgt7ulnaee" path="res://Game/Assets/Models/Decoration/tire_pump_2k.gltf" id="1_l1jfh"]
+[ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="2_dye6q"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="3_b2kqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6xdx"]
+size = Vector3(0.504694, 1, 0.486615)
+
+[node name="TirePumpProp" instance=ExtResource("1_l1jfh")]
+
+[node name="Tire Pump" parent="." index="1" instance=ExtResource("2_dye6q")]
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Tire Pump" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34988, 0)
+shape = SubResource("BoxShape3D_p6xdx")
+
+[node name="PropManager" parent="." index="2" instance=ExtResource("3_b2kqw")]
+active_stage = 5
+path_mesh_instance = NodePath("../tire_pump")
+path_interaction_trigger = NodePath("../Tire Pump")

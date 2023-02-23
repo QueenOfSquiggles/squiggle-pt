@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cahmct41kfows"]
+
+[ext_resource type="PackedScene" uid="uid://d16a1ivp6s31w" path="res://Game/Assets/Models/Decoration/modern_ceiling_lamp_01_2k.gltf" id="1_28ick"]
+
+[node name="modern_ceiling_lamp_01_2k" instance=ExtResource("1_28ick")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.293026, 0)
+light_energy = 0.7
+light_bake_mode = 1
+shadow_enabled = true

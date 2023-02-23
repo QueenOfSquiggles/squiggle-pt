@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://335ivhxfl4w7"]
+
+[ext_resource type="PackedScene" uid="uid://ba30ds0b2ngpd" path="res://Game/Assets/Models/Decoration/flathead_screwdriver_2k.gltf" id="1_8mt2g"]
+[ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="2_xu5as"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="3_cwook"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ug1af"]
+size = Vector3(0.163287, 0.348977, 0.197005)
+
+[node name="FlatheadScrewdriversProp" instance=ExtResource("1_8mt2g")]
+
+[node name="Screwdriver" parent="." index="1" instance=ExtResource("2_xu5as")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Screwdriver" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0756117, 0)
+shape = SubResource("BoxShape3D_ug1af")
+
+[node name="PropManager" parent="." index="2" instance=ExtResource("3_cwook")]
+active_stage = 10
+path_mesh_instance = NodePath("../flathead_screwdriver")
+path_interaction_trigger = NodePath("../Screwdriver")

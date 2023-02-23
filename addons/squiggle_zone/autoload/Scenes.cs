@@ -26,7 +26,7 @@ public partial class Scenes : Node
             return;
         }
 
-        Print.Info($"Starting load scene: {file_path}");
+        Print.Debug($"Starting load scene: {file_path}");
         await FadeOut();
 
         if (ResourceLoader.LoadThreadedGet(file_path) is not PackedScene scene)
@@ -43,7 +43,7 @@ public partial class Scenes : Node
         if (scene == null) return;
         GetTree().ChangeSceneToPacked(scene);
         await FadeIn();
-        Print.Info($"Finished loading scene: {scene.ResourcePath}");
+        Print.Debug($"Finished loading scene: {scene.ResourcePath}");
     }
 
     private SignalAwaiter FadeOut()

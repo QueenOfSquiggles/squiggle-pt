@@ -31,7 +31,8 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:steel_frame_shelves_02": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 2
 }
 }
 }

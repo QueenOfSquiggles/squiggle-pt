@@ -1,0 +1,38 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ba30ds0b2ngpd"
+path="res://.godot/imported/flathead_screwdriver_2k.gltf-98efb618999722308964e1ef2201281d.scn"
+
+[deps]
+
+source_file="res://Game/Assets/Models/Decoration/flathead_screwdriver_2k.gltf"
+dest_files=["res://.godot/imported/flathead_screwdriver_2k.gltf-98efb618999722308964e1ef2201281d.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:flathead_screwdriver": {
+"generate/physics": true
+}
+}
+}
+gltf/embedded_image_handling=1

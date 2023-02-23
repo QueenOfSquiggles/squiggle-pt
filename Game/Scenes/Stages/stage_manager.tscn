@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckhgyu6jhrht2"]
+
+[ext_resource type="Script" path="res://Game/Scenes/Stages/StageManager.cs" id="1_jeunj"]
+[ext_resource type="PackedScene" uid="uid://dcyifwrlopp61" path="res://SquiggleZonePrefabs/HUD/hud_requests.tscn" id="2_t5xdu"]
+
+[node name="StageManager" type="Node"]
+script = ExtResource("1_jeunj")
+stage_names = PackedStringArray("Camera", "Baseball", "Hanging Picture", "Teapot", "Cassette Player", "Tire Pump", "Alarm Clock", "Picture Frame", "Potted Plant", "Crutch", "Screwdriver", "Bust", "Exit")
+path_hud_requests = NodePath("HUD Requests")
+
+[node name="HUD Requests" parent="." instance=ExtResource("2_t5xdu")]

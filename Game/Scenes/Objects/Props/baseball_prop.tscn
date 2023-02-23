@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv4eehmb37ow1"]
+
+[ext_resource type="PackedScene" uid="uid://deqbp3ey0o8hk" path="res://Game/Assets/Models/Decoration/baseball_01_2k.gltf" id="1_2ca3o"]
+[ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="2_221qy"]
+[ext_resource type="Material" uid="uid://cvluek2ywidku" path="res://Game/Assets/ShaderMaterials/ItemHighlightMaterial.tres" id="4_ap2to"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="4_f4col"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2evc5"]
+radius = 0.111958
+
+[node name="BaseballProp" instance=ExtResource("1_2ca3o")]
+
+[node name="baseball_01" parent="." index="0"]
+material_overlay = ExtResource("4_ap2to")
+
+[node name="Baseball" parent="." index="1" instance=ExtResource("2_221qy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Baseball" index="0"]
+shape = SubResource("SphereShape3D_2evc5")
+
+[node name="PropManager" parent="." index="2" instance=ExtResource("4_f4col")]
+active_stage = 1
+path_interaction_trigger = NodePath("../Baseball")

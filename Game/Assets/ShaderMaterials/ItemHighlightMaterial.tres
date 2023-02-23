@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cvluek2ywidku"]
+
+[ext_resource type="Shader" path="res://Game/Assets/ShaderMaterials/ItemHighlightMaterial.gdshader" id="1_pwsbc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pwsbc")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_speed = 2.0
+shader_parameter/shine_width = 1.0
+shader_parameter/vertical_scale = 2.0

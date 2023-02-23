@@ -2,6 +2,7 @@
 
 [resource]
 background_mode = 1
+ambient_light_color = Color(0.329412, 0.329412, 0.329412, 1)
 tonemap_mode = 3
 ssr_enabled = true
 ssao_enabled = true
@@ -10,5 +11,4 @@ sdfgi_enabled = true
 sdfgi_read_sky_light = false
 sdfgi_y_scale = 2
 glow_enabled = true
-volumetric_fog_density = 0.17
 adjustment_enabled = true

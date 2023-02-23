@@ -73,14 +73,14 @@ text = "Link"
 
 [node name="Category6" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-text = "All Else"
+text = "HD Models & Materials"
 
 [node name="VSeparator16" type="VSeparator" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 
 [node name="Name6" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
-text = "QueenOfSquiggles"
+text = "PolyHaven"
 
 [node name="VSeparator17" type="VSeparator" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -88,6 +88,45 @@ layout_mode = 2
 [node name="LinkButton6" type="LinkButton" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Link"
+uri = "https://polyhaven.com/"
+
+[node name="Category7" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "UI Textures"
+
+[node name="VSeparator18" type="VSeparator" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Name7" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Kenney"
+
+[node name="VSeparator19" type="VSeparator" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="LinkButton7" type="LinkButton" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Link"
+uri = "https://www.kenney.nl/"
+
+[node name="Category8" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "All Else"
+
+[node name="VSeparator20" type="VSeparator" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="Name8" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "QueenOfSquiggles"
+
+[node name="VSeparator21" type="VSeparator" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="LinkButton8" type="LinkButton" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Link"
+uri = "https://queenofsquiggles.itch.io/"
 
 [node name="ReturnMainMenuPanel" type="PanelContainer" parent="."]
 layout_mode = 1

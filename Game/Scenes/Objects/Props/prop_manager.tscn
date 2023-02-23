@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://6du2kt4tac3l"]
+
+[ext_resource type="Script" path="res://Game/Scenes/Objects/Props/PropManager.cs" id="1_n0y5o"]
+[ext_resource type="Material" uid="uid://cvluek2ywidku" path="res://Game/Assets/ShaderMaterials/ItemHighlightMaterial.tres" id="2_hqg2n"]
+
+[node name="PropManager" type="Node"]
+script = ExtResource("1_n0y5o")
+active_material = ExtResource("2_hqg2n")
+path_mesh_instance = NodePath("../baseball_01")
+path_interaction_trigger = NodePath("../InteractiveTrigger")

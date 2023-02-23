@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://4pige2gbniy"]
+
+[ext_resource type="PackedScene" uid="uid://u1ag38a6fdyl" path="res://Game/Assets/Models/Decoration/vintage_crutches_01_2k.gltf" id="1_6ky8q"]
+[ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="2_0c0ts"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="3_0hgc7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xmjd2"]
+size = Vector3(0.233987, 1.79478, 0.29224)
+
+[node name="VintageCrutchesProp" instance=ExtResource("1_6ky8q")]
+
+[node name="vintage_crutches_01_crutch02" parent="." index="1"]
+visible = false
+
+[node name="Wooden Crutch" parent="." index="2" instance=ExtResource("2_0c0ts")]
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Wooden Crutch" index="0"]
+transform = Transform3D(0.114169, -0.073476, 0.990741, 0, 0.997261, 0.0739596, -0.993461, -0.00844385, 0.113856, 0.057836, 0.755363, 0)
+shape = SubResource("BoxShape3D_xmjd2")
+
+[node name="PropManager" parent="." index="3" instance=ExtResource("3_0hgc7")]
+active_stage = 9
+path_mesh_instance = NodePath("../vintage_crutches_01_crutch01")
+path_interaction_trigger = NodePath("../Wooden Crutch")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4ln762gye26w"]
+
+[ext_resource type="PackedScene" uid="uid://cibmovpvstwq0" path="res://Game/Assets/Models/Decoration/Camera_01_2k.gltf" id="1_bxxd3"]
+[ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="2_brd7s"]
+[ext_resource type="PackedScene" uid="uid://6du2kt4tac3l" path="res://Game/Scenes/Objects/Props/prop_manager.tscn" id="3_om7uc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t8n1c"]
+size = Vector3(0.36616, 0.234342, 0.541917)
+
+[node name="CameraProp" instance=ExtResource("1_bxxd3")]
+
+[node name="Camera" parent="." index="2" instance=ExtResource("2_brd7s")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Camera" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0439392, 0.0439392)
+shape = SubResource("BoxShape3D_t8n1c")
+
+[node name="PropManager" parent="." index="3" instance=ExtResource("3_om7uc")]
+path_mesh_instance = NodePath("../Camera_01")
+path_interaction_trigger = NodePath("../Camera")
