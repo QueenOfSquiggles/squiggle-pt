@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b50ruxi2wcq23"]
+[gd_scene load_steps=6 format=3 uid="uid://b50ruxi2wcq23"]
 
 [ext_resource type="Script" path="res://Menus/CreditsScene.cs" id="2_0eafv"]
 [ext_resource type="Material" uid="uid://b1ehu0o3ymh3v" path="res://Menus/menu_panorama_material.tres" id="2_k7ri6"]
 [ext_resource type="Texture2D" uid="uid://c8fgnkcmhxaeh" path="res://icon.svg" id="3_ciufw"]
 [ext_resource type="PackedScene" uid="uid://b2e5mu8luvf1l" path="res://SquiggleZonePrefabs/UI_Tools/request_focus_on_parent.tscn" id="4_5aol3"]
+[ext_resource type="PackedScene" uid="uid://c8kevka1e7pns" path="res://SquiggleZonePrefabs/UI_Tools/ui_sounds.tscn" id="4_7sq8l"]
 
 [node name="CreditsScene" type="Control"]
 layout_mode = 3
@@ -71,6 +72,8 @@ layout_mode = 2
 layout_mode = 2
 text = "Link"
 
+[node name="UISounds" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer/LinkButton" instance=ExtResource("4_7sq8l")]
+
 [node name="Category6" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "HD Models & Materials"
@@ -89,6 +92,8 @@ layout_mode = 2
 layout_mode = 2
 text = "Link"
 uri = "https://polyhaven.com/"
+
+[node name="UISounds" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer/LinkButton6" instance=ExtResource("4_7sq8l")]
 
 [node name="Category7" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
@@ -109,6 +114,8 @@ layout_mode = 2
 text = "Link"
 uri = "https://www.kenney.nl/"
 
+[node name="UISounds" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer/LinkButton7" instance=ExtResource("4_7sq8l")]
+
 [node name="Category8" type="Label" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "All Else"
@@ -128,6 +135,8 @@ layout_mode = 2
 text = "Link"
 uri = "https://queenofsquiggles.itch.io/"
 
+[node name="UISounds" parent="CreditsPanel/PanelContainer/VBoxContainer/GridContainer/LinkButton8" instance=ExtResource("4_7sq8l")]
+
 [node name="ReturnMainMenuPanel" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
@@ -143,5 +152,7 @@ text = "Return to Main Menu"
 
 [node name="RequestFocusOnParent" parent="ReturnMainMenuPanel/Button" instance=ExtResource("4_5aol3")]
 layout_mode = 1
+
+[node name="UISounds" parent="ReturnMainMenuPanel/Button" instance=ExtResource("4_7sq8l")]
 
 [connection signal="pressed" from="ReturnMainMenuPanel/Button" to="." method="OnMenuButtonPressed"]

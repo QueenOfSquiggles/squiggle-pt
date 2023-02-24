@@ -14,6 +14,13 @@ public static class GameStages
         StageChanged?.Invoke(Current);
     }
 
+    public static void Reset()
+    {
+        Current = 0;
+        Print.Debug("Stages Reset");
+        StageChanged?.Invoke(Current);
+    }
+
 #if DEBUG
     public static void TriggerPreviousStage()
     {
@@ -22,6 +29,7 @@ public static class GameStages
         Print.Debug($"Current Stage: {Current}");
         StageChanged?.Invoke(Current);
     }
+
 #endif
 
 }

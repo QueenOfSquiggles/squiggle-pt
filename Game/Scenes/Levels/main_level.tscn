@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://ptc01npmn442"]
+[gd_scene load_steps=55 format=3 uid="uid://ptc01npmn442"]
 
 [ext_resource type="PackedScene" uid="uid://268fgn52rnve" path="res://Game/Assets/Models/Hallway/hallway.glb" id="1_2p8e8"]
 [ext_resource type="PackedScene" uid="uid://e2sjrp7dx214" path="res://SquiggleZonePrefabs/FPS_Player/first_person_character_controller.tscn" id="2_jdf8f"]
@@ -51,6 +51,8 @@
 [ext_resource type="PackedScene" uid="uid://dvngsk22tfgnt" path="res://Game/Scenes/Objects/Props/marble_bust_prop.tscn" id="48_tnbtj"]
 [ext_resource type="PackedScene" uid="uid://ckhgyu6jhrht2" path="res://Game/Scenes/Stages/stage_manager.tscn" id="49_j6hf4"]
 [ext_resource type="PackedScene" uid="uid://8wicgehkfva8" path="res://Game/Scenes/Stages/stage_debugger.tscn" id="51_0swe0"]
+[ext_resource type="Script" path="res://Game/Scenes/Levels/DemoSplit.cs" id="52_hr1wc"]
+[ext_resource type="Script" path="res://Game/Scenes/Levels/ResetStages.cs" id="53_3u8i4"]
 
 [sub_resource type="VoxelGIData" id="VoxelGIData_clt24"]
 _data = {
@@ -64,6 +66,9 @@ _data = {
 }
 
 [node name="MainLevel" type="Node3D"]
+
+[node name="ResetStages" type="Node" parent="."]
+script = ExtResource("53_3u8i4")
 
 [node name="DefaultHUD" parent="." instance=ExtResource("32_mwtis")]
 
@@ -406,3 +411,8 @@ transform = Transform3D(0.142072, 0, -0.622517, 0, 0.638523, 0, 0.622517, 0, 0.1
 [node name="StageManager" parent="." instance=ExtResource("49_j6hf4")]
 
 [node name="StageDebugger" parent="." instance=ExtResource("51_0swe0")]
+
+[node name="DemoSplit" type="Node" parent="."]
+script = ExtResource("52_hr1wc")
+test = true
+path_demo_end_scene = "res://DemoAssets/demo_end_scene.tscn"
