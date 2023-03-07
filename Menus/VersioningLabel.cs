@@ -8,21 +8,13 @@ public partial class VersioningLabel : Label
 
     public override void _Ready()
     {
-        #if GODOT_DEMO
+        if (OS.HasFeature("demo"))
             Text = text_demo;
-        #else
+        else 
             Text = text_release;
-        #endif
-
         #if DEBUG
             Text += " - debug";
         #endif
-        if (OS.HasFeature("demo"))
-        {
-            Text += " -- demo";
-        } else {
-            Text += " -- release";
-        }
     }
     
 

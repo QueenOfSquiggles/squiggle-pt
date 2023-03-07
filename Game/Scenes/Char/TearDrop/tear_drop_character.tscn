@@ -1,0 +1,161 @@
+[gd_scene load_steps=14 format=3 uid="uid://ld04geok3dc8"]
+
+[ext_resource type="PackedScene" uid="uid://b8aluxcv731v4" path="res://Game/Assets/Models/Characters/teardrop.glb" id="1_tab0j"]
+[ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/TearDropChar.cs" id="2_wiyy4"]
+[ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseController.cs" id="3_stac2"]
+[ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseIdle.cs" id="4_a73id"]
+[ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseTeleport.cs" id="5_8eq6w"]
+[ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseWeepingAngel.cs" id="6_jd23e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dnk18"]
+size = Vector3(0.820779, 0.754719, 1.58897)
+
+[sub_resource type="Animation" id="Animation_ebml3"]
+resource_name = "RockingChair"
+length = 14.9
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("SittingInRockingChair"),
+"times": PackedFloat32Array(-0.1)
+}
+
+[sub_resource type="Animation" id="Animation_vd5l6"]
+resource_name = "Couch"
+length = 33.3
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("RestingOnCouch"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7xiwi"]
+resource_name = "Standing"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("StandingMenancingly"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mgcdn"]
+resource_name = "Crawl"
+length = 1.25
+loop_mode = 1
+step = 0.05
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("Crawling"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_quwdf"]
+resource_name = "RESET"
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("SittingInRockingChair"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wdttk"]
+_data = {
+"Couch": SubResource("Animation_vd5l6"),
+"Crawl": SubResource("Animation_mgcdn"),
+"RESET": SubResource("Animation_quwdf"),
+"RockingChair": SubResource("Animation_ebml3"),
+"Standing": SubResource("Animation_7xiwi")
+}
+
+[node name="TearDropCharacter" instance=ExtResource("1_tab0j")]
+script = ExtResource("2_wiyy4")
+path_phase_controllers = NodePath("PhaseControllers")
+path_anim_driver = NodePath("AnimationDriver")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/0/rotation = Quaternion(-0.599809, 0.460641, 0.44615, 0.478529)
+bones/1/rotation = Quaternion(0.0815238, 0.0768054, -0.642402, 0.758139)
+bones/2/rotation = Quaternion(-0.640927, 0.01904, 0.0473059, 0.765906)
+bones/4/rotation = Quaternion(0.174649, -5.60311e-23, -9.93853e-24, 0.984631)
+bones/8/rotation = Quaternion(-0.506701, -0.282272, 0.011769, 0.814517)
+bones/9/rotation = Quaternion(-0.585386, -0.176912, 0.117807, 0.782398)
+bones/12/rotation = Quaternion(1.82316e-08, -9.95214e-30, 1.29821e-24, 1)
+bones/14/rotation = Quaternion(-0.473306, 0.256879, 0.00819805, 0.842572)
+bones/15/rotation = Quaternion(-0.560491, 0.184323, -0.132557, 0.796432)
+bones/16/rotation = Quaternion(-0.501447, -0.553359, -0.524707, 0.40869)
+bones/17/rotation = Quaternion(0.0632323, -0.0427263, 0.65252, 0.753919)
+bones/18/rotation = Quaternion(-0.636742, -0.0600853, -0.0397913, 0.767702)
+
+[node name="HeadAttachment" type="BoneAttachment3D" parent="." index="2"]
+transform = Transform3D(1.116, -2.89763e-24, -1.27014e-22, -4.09629e-23, 1.04792, -0.383826, 1.20262e-22, 0.383826, 1.04792, -1.01684e-29, 1.53801, 0.190449)
+bone_name = "HeadTop"
+bone_idx = 12
+use_external_skeleton = true
+external_skeleton = NodePath("../Armature/Skeleton3D")
+
+[node name="Killbox" type="Area3D" parent="HeadAttachment" index="0"]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeadAttachment/Killbox" index="0"]
+transform = Transform3D(1, 4.09782e-08, 0, -2.6077e-08, 1, -2.98023e-08, 2.23517e-08, -2.98023e-08, 1, 1.49012e-08, 0, -0.491501)
+shape = SubResource("BoxShape3D_dnk18")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00553, 0)
+aabb = AABB(-0.747474, -1.14605, -1.40902, 1.49495, 2.2921, 2.81804)
+
+[node name="PhaseControllers" type="Node" parent="." index="4"]
+script = ExtResource("3_stac2")
+PathActorNode = NodePath("..")
+LocationsGroupName = "teardrop_location"
+StageTeleport = 4
+
+[node name="PhaseIdle" type="Node" parent="PhaseControllers" index="0"]
+script = ExtResource("4_a73id")
+StageSwitchToCouch = 2
+
+[node name="PhaseTeleport" type="Node" parent="PhaseControllers" index="1"]
+script = ExtResource("5_8eq6w")
+
+[node name="MoveTimer" type="Timer" parent="PhaseControllers/PhaseTeleport" index="0"]
+wait_time = 15.0
+
+[node name="PhaseWeepingAngel" type="Node" parent="PhaseControllers" index="2"]
+script = ExtResource("6_jd23e")
+
+[node name="AnimationDriver" type="AnimationPlayer" parent="." index="5"]
+autoplay = "RockingChair"
+libraries = {
+"": SubResource("AnimationLibrary_wdttk")
+}
+
+[connection signal="body_entered" from="HeadAttachment/Killbox" to="." method="OnBodyEnteredKillbox"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnEnterVisiblity"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnExitVisiblity"]

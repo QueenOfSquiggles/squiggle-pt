@@ -17,7 +17,7 @@ cache/content_auto_refresh=true
 
 [application]
 
-config/name="Squiggle PT"
+config/name="Gruesome Claims"
 config/description="A small PT-like game for testing out my game base and finding opportunities to expand upon it"
 run/main_scene="res://LaunchAnimation/launch_sequence.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
@@ -141,6 +141,12 @@ ui_cycle_right={
 ]
 }
 
+[physics]
+
+3d/physics_engine="GodotPhysics3D"
+
 [rendering]
 
+global_illumination/gi/use_half_resolution=true
+global_illumination/sdfgi/frames_to_converge=2
 occlusion_culling/use_occlusion_culling=true

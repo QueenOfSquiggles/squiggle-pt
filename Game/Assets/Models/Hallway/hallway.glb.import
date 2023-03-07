@@ -31,7 +31,6 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:HallwayMesh": {
-"generate/navmesh": 1,
 "generate/occluder": 1,
 "generate/physics": true,
 "physics/shape_type": 2

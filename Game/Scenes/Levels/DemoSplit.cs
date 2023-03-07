@@ -25,11 +25,12 @@ public partial class DemoSplit : Node
     private void OnStageChange(int stage)
     {
         if (stage <= final_stage) return;
-        #if GODOT_DEMO
-        Scenes.LoadSceneAsync(path_demo_end_scene);
-        #else
-        if (test) Scenes.LoadSceneAsync(path_demo_end_scene);
-        #endif
+        
+        if (OS.HasFeature("demo"))
+            Scenes.LoadSceneAsync(path_demo_end_scene);            
+        else if (test) 
+            Scenes.LoadSceneAsync(path_demo_end_scene);
+        
     }
 
 

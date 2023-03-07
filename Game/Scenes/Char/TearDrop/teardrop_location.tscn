@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7jkdaglgmgg5"]
+
+[ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/TeardropLocation.cs" id="1_lqs7e"]
+
+[node name="TeardropLocation" type="Marker3D" groups=["teardrop_location"]]
+script = ExtResource("1_lqs7e")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
+
+[connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="OnEnterScreen"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="OnExitScreen"]
