@@ -46,4 +46,5 @@ public partial class PhaseIdle : Node, PhaseBase
 		anim.Play(anim_name);
 	}
 
+    public bool CanKillPlayer() => false;
 }

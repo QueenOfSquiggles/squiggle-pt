@@ -30,12 +30,6 @@ public partial class TearDropChar : Node3D
 		this.GetNode(path_location_couch, out location_couch);
 
 		phase_controller.Setup(location_rocking_chair, location_couch, anim);
-	}	
-
-	private void OnBodyEnteredKillbox(Node3D body)
-	{
-		if (!body.IsInGroup("player")) return;
-		Print.Debug("Player has entered the kill box!");
 	}
 
 

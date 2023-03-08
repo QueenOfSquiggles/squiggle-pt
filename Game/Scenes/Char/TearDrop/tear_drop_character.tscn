@@ -1,29 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://ld04geok3dc8"]
+[gd_scene load_steps=15 format=3 uid="uid://ld04geok3dc8"]
 
 [ext_resource type="PackedScene" uid="uid://b8aluxcv731v4" path="res://Game/Assets/Models/Characters/teardrop.glb" id="1_tab0j"]
 [ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/TearDropChar.cs" id="2_wiyy4"]
 [ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseController.cs" id="3_stac2"]
 [ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseIdle.cs" id="4_a73id"]
+[ext_resource type="PackedScene" uid="uid://cit8p7u8gt721" path="res://Game/Scenes/Char/TearDrop/teardrop_jumpscare.tscn" id="4_h24q0"]
 [ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseTeleport.cs" id="5_8eq6w"]
 [ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/PhaseWeepingAngel.cs" id="6_jd23e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dnk18"]
 size = Vector3(0.820779, 0.754719, 1.58897)
-
-[sub_resource type="Animation" id="Animation_ebml3"]
-resource_name = "RockingChair"
-length = 14.9
-loop_mode = 1
-tracks/0/type = "animation"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": PackedStringArray("SittingInRockingChair"),
-"times": PackedFloat32Array(-0.1)
-}
 
 [sub_resource type="Animation" id="Animation_vd5l6"]
 resource_name = "Couch"
@@ -37,21 +23,6 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": PackedStringArray("RestingOnCouch"),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_7xiwi"]
-resource_name = "Standing"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "animation"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": PackedStringArray("StandingMenancingly"),
 "times": PackedFloat32Array(0)
 }
 
@@ -84,6 +55,36 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_ebml3"]
+resource_name = "RockingChair"
+length = 14.9
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("SittingInRockingChair"),
+"times": PackedFloat32Array(-0.1)
+}
+
+[sub_resource type="Animation" id="Animation_7xiwi"]
+resource_name = "Standing"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("StandingMenancingly"),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wdttk"]
 _data = {
 "Couch": SubResource("Animation_vd5l6"),
@@ -98,8 +99,10 @@ script = ExtResource("2_wiyy4")
 path_phase_controllers = NodePath("PhaseControllers")
 path_anim_driver = NodePath("AnimationDriver")
 
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(1.116, 0, 0, 0, 1.116, 0, 0, 0, 1.116, 0, -0.314239, 0.068605)
+
 [node name="Skeleton3D" parent="Armature" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/rotation = Quaternion(-0.599809, 0.460641, 0.44615, 0.478529)
 bones/1/rotation = Quaternion(0.0815238, 0.0768054, -0.642402, 0.758139)
 bones/2/rotation = Quaternion(-0.640927, 0.01904, 0.0473059, 0.765906)
@@ -114,7 +117,7 @@ bones/17/rotation = Quaternion(0.0632323, -0.0427263, 0.65252, 0.753919)
 bones/18/rotation = Quaternion(-0.636742, -0.0600853, -0.0397913, 0.767702)
 
 [node name="HeadAttachment" type="BoneAttachment3D" parent="." index="2"]
-transform = Transform3D(1.116, -2.89763e-24, -1.27014e-22, -4.09629e-23, 1.04792, -0.383826, 1.20262e-22, 0.383826, 1.04792, -1.01684e-29, 1.53801, 0.190449)
+transform = Transform3D(1.116, -2.89763e-24, -1.27014e-22, -4.09629e-23, 1.04792, -0.383826, 1.20262e-22, 0.383826, 1.04792, -1.76584e-29, 1.53801, 0.190449)
 bone_name = "HeadTop"
 bone_idx = 12
 use_external_skeleton = true
@@ -136,6 +139,7 @@ script = ExtResource("3_stac2")
 PathActorNode = NodePath("..")
 LocationsGroupName = "teardrop_location"
 StageTeleport = 4
+JumpscareScene = ExtResource("4_h24q0")
 
 [node name="PhaseIdle" type="Node" parent="PhaseControllers" index="0"]
 script = ExtResource("4_a73id")
@@ -145,7 +149,7 @@ StageSwitchToCouch = 2
 script = ExtResource("5_8eq6w")
 
 [node name="MoveTimer" type="Timer" parent="PhaseControllers/PhaseTeleport" index="0"]
-wait_time = 15.0
+wait_time = 30.0
 
 [node name="PhaseWeepingAngel" type="Node" parent="PhaseControllers" index="2"]
 script = ExtResource("6_jd23e")
@@ -156,6 +160,6 @@ libraries = {
 "": SubResource("AnimationLibrary_wdttk")
 }
 
-[connection signal="body_entered" from="HeadAttachment/Killbox" to="." method="OnBodyEnteredKillbox"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnEnterVisiblity"]
-[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnExitVisiblity"]
+[connection signal="body_entered" from="HeadAttachment/Killbox" to="PhaseControllers" method="OnBodyEnterKillbox"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnEnterVisiblity" flags=18]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnExitVisiblity" flags=18]

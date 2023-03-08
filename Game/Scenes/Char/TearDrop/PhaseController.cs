@@ -8,7 +8,9 @@ public partial class PhaseController : Node
 	[Export] private string LocationsGroupName = "TeardropLocation";
 	[Export] private int StageIdle = 0;
 	[Export] private int StageTeleport = 5;
-	[Export] private int StageWeepingAngel = 6;
+	[Export] private int StageWeepingAngel = 8;
+
+	[Export] private PackedScene JumpscareScene;
 	
 	private Node3D actor_node;
 
@@ -56,6 +58,17 @@ public partial class PhaseController : Node
 			CurrentBase = next;
 			CurrentBase?.Start();
 		}
+	}
+
+	public void OnBodyEnterKillbox(Node3D body)
+	{
+		if (!body.IsInGroup("player")) return;		
+		if(!CurrentBase.CanKillPlayer()) return;
+
+		var node = JumpscareScene.Instantiate();
+		GetTree().Root.AddChild(node);
+		GetTree().Paused = true;
+		actor_node.QueueFree();
 	}
 
 }

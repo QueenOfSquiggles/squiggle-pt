@@ -59,6 +59,8 @@
 
 [node name="Utility" type="Node" parent="."]
 
+[node name="DefaultHUD" parent="Utility" instance=ExtResource("32_mwtis")]
+
 [node name="StageManager" parent="Utility" instance=ExtResource("49_j6hf4")]
 
 [node name="StageDebugger" parent="Utility" instance=ExtResource("51_0swe0")]
@@ -72,10 +74,8 @@ path_demo_end_scene = "res://DemoAssets/demo_end_scene.tscn"
 [node name="ResetStages" type="Node" parent="Utility"]
 script = ExtResource("53_3u8i4")
 
-[node name="DefaultHUD" parent="Utility" instance=ExtResource("32_mwtis")]
-
 [node name="First Person Character Controller" parent="." instance=ExtResource("2_jdf8f")]
-transform = Transform3D(0.0390854, 0, -0.999236, 0, 1, 0, 0.999236, 0, 0.0390854, 3.20157, -0.014102, 2.62566)
+transform = Transform3D(-0.999236, 0, -0.0390854, 0, 1, 0, 0.0390854, 0, -0.999236, 8.45308, -0.014102, -1.52116)
 speed = 2.0
 
 [node name="CameraBrain" parent="." instance=ExtResource("3_vbpup")]
@@ -109,6 +109,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.979
 
 [node name="TeardropLocation6" parent="Geometry/Decor/Objects" instance=ExtResource("25_7wkkk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.06101, 0.0048331, -1.49616)
+
+[node name="TeardropLocation7" parent="Geometry/Decor/Objects" instance=ExtResource("25_7wkkk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.4946, 0.0048331, 8.09962)
+
+[node name="TeardropLocation8" parent="Geometry/Decor/Objects" instance=ExtResource("25_7wkkk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.44227, 0.0048331, 6.38857)
 
 [node name="modern_arm_chair_01_2k" parent="Geometry/Decor/Objects" instance=ExtResource("6_ifqka")]
 transform = Transform3D(0.880973, 0, -0.473166, 0, 1, 0, 0.473166, 0, 0.880973, 4.86577, 0.00771743, 2.20815)

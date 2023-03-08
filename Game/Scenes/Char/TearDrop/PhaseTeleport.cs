@@ -3,10 +3,14 @@ using queen.error;
 using queen.extension;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public partial class PhaseTeleport : Node, PhaseBase
 {
 
+	[Export] private float WaitTimeLong = 30.0f;
+	[Export] private float WaitTimeShort = 2.0f;
+	[Export] private float ChanceExactLocation = 0.25f;
 	private Marker3D rocking_chair;
 	private Marker3D couch;
 	private AnimationPlayer anim;
@@ -17,6 +21,8 @@ public partial class PhaseTeleport : Node, PhaseBase
 	private Node3D PlayerNode;
 
 	private bool ActorIsVisible = false;
+	private Random random = new();
+	private bool KillingEnabled = true;
 
 	public override void _Ready()
 	{
@@ -56,7 +62,7 @@ public partial class PhaseTeleport : Node, PhaseBase
 		if (ActorIsVisible)
 		{
 			// try again next time.
-			MoveTimer.Start();
+			MoveTimer.Start(WaitTimeShort);
 			return;
 		}
 
@@ -73,16 +79,26 @@ public partial class PhaseTeleport : Node, PhaseBase
 		if (closest_marker == null)
 		{
 			Print.Error("Failed to find a valid marker!");
-			MoveTimer.Start();
+			MoveTimer.Start(WaitTimeLong);
 			return;
 		} else {
-			Print.Debug($"Attempting to teleport teardrop: {valid_targets.Count} valid positions found. ClosestMarker = {closest_marker}");
+			Print.Debug($"Attempting to teleport teardrop: {valid_targets.Count} valid positions found. ClosestMarker = {closest_marker.GlobalPosition}");
 		}
 
+		PlayerSafetyNet();
 		Actor.GlobalTransform = closest_marker.GlobalTransform;
 		ManageAnimation(closest_marker);
-		MoveTimer.Start();
+		MoveTimer.Start(WaitTimeLong);
     }
+
+	private async void PlayerSafetyNet()
+	{
+		// temporary disable the kill box on teleport to avoid insta-killing player
+		// should make it a bit more fair, while still being spooky.
+		KillingEnabled = false;
+		await Task.Delay(500);
+		KillingEnabled = true;
+	}
 
 	private List<TeardropLocation> GetActiveTargets()
 	{
@@ -93,12 +109,23 @@ public partial class PhaseTeleport : Node, PhaseBase
 		// prune to active locations with correct type
 		foreach (var entry in targets)
 		{
-			if (entry is TeardropLocation tl && tl.IsActive) valid_targets.Add(tl);
+			if (entry is TeardropLocation tl && tl.IsActive && (tl.GlobalPosition - Actor.GlobalPosition).LengthSquared() > 0.1) 
+			{
+				valid_targets.Add(tl);
+			}
 		}
 		return valid_targets;
 	}
 
 	private TeardropLocation GetBestLocation(List<TeardropLocation> valid_targets)
+	{
+		// If we win the random, go to perfect spot. Else choose a random location.
+		// Ideally this will prevent Teardrop from camping a specific spot, while still moving erratically.
+		if (random.NextSingle() < ChanceExactLocation) return GetClosestLocation(valid_targets);
+		return valid_targets[random.Next() % valid_targets.Count];
+	}
+
+	private TeardropLocation GetClosestLocation(List<TeardropLocation> valid_targets)
 	{
 		TeardropLocation closest_marker = null;
 		float current_dist = float.MaxValue;
@@ -112,7 +139,6 @@ public partial class PhaseTeleport : Node, PhaseBase
 				closest_marker = loc;
 			}
 		}
-		Print.Debug($"Closest position was found {current_dist} meters away from the player");
 		return closest_marker;
 	}
 
@@ -146,6 +172,6 @@ public partial class PhaseTeleport : Node, PhaseBase
 		ActorIsVisible = false;		
 	}
 
-
+    public bool CanKillPlayer() => KillingEnabled;
 
 }

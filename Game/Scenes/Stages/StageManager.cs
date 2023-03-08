@@ -1,4 +1,5 @@
 using Godot;
+using queen.error;
 using queen.extension;
 using System;
 

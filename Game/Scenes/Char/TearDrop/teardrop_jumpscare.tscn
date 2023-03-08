@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://cit8p7u8gt721"]
+
+[ext_resource type="PackedScene" uid="uid://b8aluxcv731v4" path="res://Game/Assets/Models/Characters/teardrop.glb" id="1_2qi30"]
+[ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/TeardropJumpscare.cs" id="1_fxyld"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_erjhr"]
+font_size = 12
+
+[sub_resource type="Animation" id="Animation_gjsvy"]
+resource_name = "JumpscareSequence"
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/teardrop/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("Jumpscare"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ExitJumpscare"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aahuh"]
+_data = {
+"JumpscareSequence": SubResource("Animation_gjsvy")
+}
+
+[node name="TeardropJumpscare" type="CanvasLayer"]
+process_mode = 3
+layer = 128
+script = ExtResource("1_fxyld")
+GameOverScene = "res://Game/Scenes/Menus/game_over_bad.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.160784, 0.160784, 0.160784, 0.4)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -36.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Boo!"
+label_settings = SubResource("LabelSettings_erjhr")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.513, -1.032)
+current = true
+fov = 60.0
+near = 0.001
+far = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-0.970416, 0.232796, -0.0640235, 0.237471, 0.872418, -0.427193, -0.0435933, -0.429758, -0.901891, 0, 0, 0)
+shadow_enabled = true
+
+[node name="teardrop" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_2qi30")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer"]
+autoplay = "JumpscareSequence"
+libraries = {
+"": SubResource("AnimationLibrary_aahuh")
+}

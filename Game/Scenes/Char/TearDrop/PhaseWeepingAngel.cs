@@ -10,4 +10,6 @@ public partial class PhaseWeepingAngel : Node, PhaseBase
     public void Stop()
     {
     }
+    public bool CanKillPlayer() => true;
+
 }
