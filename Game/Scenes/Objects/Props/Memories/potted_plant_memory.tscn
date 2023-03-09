@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6dlxwcgvdkbp"]
+
+[ext_resource type="PackedScene" uid="uid://gjofdrb5qywg" path="res://Game/Scenes/Objects/Props/potted_plant_prop.tscn" id="1_t08gx"]
+[ext_resource type="Material" uid="uid://b5oy7t6omnx8s" path="res://Game/Assets/ShaderMaterials/MemoryHighlightMaterial.tres" id="2_g0l3u"]
+
+[node name="PottedPlantMemory" instance=ExtResource("1_t08gx")]
+
+[node name="potted_plant_04" parent="." index="0"]
+material_overlay = ExtResource("2_g0l3u")
+
+[node name="PropManager" parent="." index="2"]
+active_stage = 7
+prop_type = 1
+active_material = ExtResource("2_g0l3u")

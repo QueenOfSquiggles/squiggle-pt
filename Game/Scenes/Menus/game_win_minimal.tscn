@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://djvh7xuojn5th"]
+[gd_scene load_steps=12 format=3 uid="uid://cskkwxr6lvic7"]
 
-[ext_resource type="Script" path="res://Game/Scenes/Menus/GameOverBadMenu.cs" id="1_ramjq"]
-[ext_resource type="Material" uid="uid://c8yyh03v5ybm5" path="res://Game/Assets/ShaderMaterials/GemIconMaterial_Purple.tres" id="2_bl8f3"]
-[ext_resource type="Texture2D" uid="uid://b722nboamda7" path="res://krita-docs/gem_icon.png" id="3_v1ku2"]
-[ext_resource type="PackedScene" uid="uid://crwvvncyw2unh" path="res://SquiggleZonePrefabs/Effects/cutscene_skipper.tscn" id="4_i1bhd"]
+[ext_resource type="Texture2D" uid="uid://b722nboamda7" path="res://krita-docs/gem_icon.png" id="1_4g4sn"]
+[ext_resource type="Script" path="res://Game/Scenes/Menus/EndScreenMenu.cs" id="1_o4rec"]
+[ext_resource type="Material" uid="uid://b03gumvheeinb" path="res://Game/Assets/ShaderMaterials/GemIconMaterial_Blue.tres" id="2_qr5p4"]
+[ext_resource type="PackedScene" uid="uid://crwvvncyw2unh" path="res://SquiggleZonePrefabs/Effects/cutscene_skipper.tscn" id="4_mq2ev"]
+[ext_resource type="Material" uid="uid://jtlruxo408ca" path="res://Game/Assets/ShaderMaterials/GemIconMaterial_Pink.tres" id="4_utg1i"]
+[ext_resource type="PackedScene" uid="uid://c8kevka1e7pns" path="res://SquiggleZonePrefabs/UI_Tools/ui_sounds.tscn" id="5_bym7s"]
+[ext_resource type="PackedScene" uid="uid://b2e5mu8luvf1l" path="res://SquiggleZonePrefabs/UI_Tools/request_focus_on_parent.tscn" id="6_tkuda"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_py7b3"]
+[sub_resource type="LabelSettings" id="LabelSettings_h4rb3"]
 font_size = 70
 
 [sub_resource type="Animation" id="Animation_jejl3"]
@@ -49,7 +52,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_o3mnt"]
 resource_name = "Sequence"
-length = 2.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,7 +60,7 @@ tracks/0/path = NodePath("VBoxContainer/Label:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 2.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -69,7 +72,7 @@ tracks/1/path = NodePath("VBoxContainer/CenterContainer2:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.2),
+"times": PackedFloat32Array(0, 3, 3.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -81,7 +84,7 @@ tracks/2/path = NodePath("VBoxContainer/CenterContainer/Gem:custom_minimum_size"
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.4, 1.9, 2),
+"times": PackedFloat32Array(3.3, 4.8, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(150, 150), Vector2(128, 128)]
@@ -93,7 +96,7 @@ tracks/3/path = NodePath("CutsceneSkipper")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -110,14 +113,14 @@ _data = {
 "Sequence": SubResource("Animation_o3mnt")
 }
 
-[node name="GameOverBad" type="Control"]
+[node name="GameWinMinimal" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ramjq")
+script = ExtResource("1_o4rec")
 MainMenuScene = "res://Menus/main_menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -141,8 +144,8 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "You Died"
-label_settings = SubResource("LabelSettings_py7b3")
+text = "You Win!"
+label_settings = SubResource("LabelSettings_h4rb3")
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -153,11 +156,17 @@ layout_mode = 2
 alignment = 1
 
 [node name="Gem" type="TextureRect" parent="VBoxContainer/CenterContainer"]
-material = ExtResource("2_bl8f3")
+material = ExtResource("2_qr5p4")
 custom_minimum_size = Vector2(10, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("3_v1ku2")
+texture = ExtResource("1_4g4sn")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Gem2" type="TextureRect" parent="VBoxContainer/CenterContainer"]
+material = ExtResource("4_utg1i")
+layout_mode = 2
+texture = ExtResource("1_4g4sn")
 expand_mode = 2
 stretch_mode = 5
 
@@ -169,11 +178,17 @@ layout_mode = 2
 layout_mode = 2
 text = "Return to Main Menu"
 
+[node name="UISounds" parent="VBoxContainer/CenterContainer2/Button" instance=ExtResource("5_bym7s")]
+
+[node name="RequestFocusOnParent" parent="VBoxContainer/CenterContainer2/Button" instance=ExtResource("6_tkuda")]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Sequence"
 libraries = {
 "": SubResource("AnimationLibrary_3ce3s")
 }
 
-[node name="CutsceneSkipper" parent="." instance=ExtResource("4_i1bhd")]
+[node name="CutsceneSkipper" parent="." instance=ExtResource("4_mq2ev")]
 path_animation_player = NodePath("../AnimationPlayer")
+
+[connection signal="pressed" from="VBoxContainer/CenterContainer2/Button" to="." method="LoadMainMenu"]

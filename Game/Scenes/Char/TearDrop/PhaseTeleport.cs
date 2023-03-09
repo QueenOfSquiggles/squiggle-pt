@@ -23,6 +23,7 @@ public partial class PhaseTeleport : Node, PhaseBase
 	private bool ActorIsVisible = false;
 	private Random random = new();
 	private bool KillingEnabled = true;
+	private bool IsActive = false;
 
 	public override void _Ready()
 	{
@@ -42,6 +43,7 @@ public partial class PhaseTeleport : Node, PhaseBase
 
     public void Start()
     {
+		IsActive = true;
 		Print.Debug("Teardrop Entering phase: Teleport");
 		PlayerNode = GetTree().GetFirstNodeInGroup("player") as Node3D;
 		DoMove();
@@ -50,11 +52,12 @@ public partial class PhaseTeleport : Node, PhaseBase
     public void Stop()
     {
 		MoveTimer.Stop();
+		IsActive = false;
     }
 
 	public override void _Process(double _delta)
 	{
-		if (anim.CurrentAnimation == "Standing") LookAtPlayer();
+		if (IsActive && anim.CurrentAnimation == "Standing") LookAtPlayer();
 	}
 
     private void DoMove()
@@ -151,7 +154,7 @@ public partial class PhaseTeleport : Node, PhaseBase
 
 	private bool MatchLocation(Marker3D a, Marker3D b)
 	{
-		return (a.GlobalPosition - b.GlobalPosition).Length() < 0.1f;
+		return (a.GlobalPosition - b.GlobalPosition).Length() < 0.2f;
 	}
 
 	private void LookAtPlayer()

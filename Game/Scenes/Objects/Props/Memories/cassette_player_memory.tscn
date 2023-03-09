@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://j4cy40t8v4v1"]
+
+[ext_resource type="PackedScene" uid="uid://xvclnka78tmo" path="res://Game/Scenes/Objects/Props/cassette_player_prop.tscn" id="1_26m0p"]
+[ext_resource type="Material" uid="uid://b5oy7t6omnx8s" path="res://Game/Assets/ShaderMaterials/MemoryHighlightMaterial.tres" id="2_vqn8q"]
+
+[node name="CassettePlayerMemory" instance=ExtResource("1_26m0p")]
+
+[node name="cassette_player_body" parent="." index="0"]
+material_overlay = ExtResource("2_vqn8q")
+
+[node name="PropManager" parent="." index="3"]
+active_stage = 2
+prop_type = 1
+active_material = ExtResource("2_vqn8q")

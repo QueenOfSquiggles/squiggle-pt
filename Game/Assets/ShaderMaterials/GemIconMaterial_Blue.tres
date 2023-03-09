@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b03gumvheeinb"]
+
+[ext_resource type="Shader" path="res://Game/Assets/ShaderMaterials/gem_icon_colourize.gdshader" id="1_yn0k2"]
+
+[resource]
+shader = ExtResource("1_yn0k2")
+shader_parameter/colour = Color(0, 1, 1, 1)

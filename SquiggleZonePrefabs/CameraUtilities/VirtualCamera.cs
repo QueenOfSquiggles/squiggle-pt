@@ -47,6 +47,7 @@ public partial class VirtualCamera : Marker3D
     public override void _ExitTree()
     {
         var brain = GetBrain();
+        if (brain == null) return; // Brain has already been cleared
         if (brain.HasCamera(this)) PopVCam();
     }
 

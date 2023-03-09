@@ -1,11 +1,17 @@
+using System;
 using Godot;
 using queen.extension;
-using System;
 
 public partial class PropManager : Node
 {
 
+    public enum PropType
+    {
+        STAGE_PROGRESSION, MEMORY
+    }
+
     [Export] private int active_stage = 0;
+    [Export] private PropType prop_type = PropType.STAGE_PROGRESSION;
     [Export] private Material active_material;
 
     [ExportGroup("Paths")]
@@ -38,7 +44,11 @@ public partial class PropManager : Node
 
     private void HandleInteraction()
     {
-        GameStages.TriggerNextStage();
+        if (prop_type == PropType.STAGE_PROGRESSION) GameStages.TriggerNextStage();
+        else {
+            trigger.is_active = false;
+            GameStages.FoundMemory();
+        }
     }
 
     public override void _ExitTree()

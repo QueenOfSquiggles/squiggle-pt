@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/teardrop.glb-c6b603d1f8b454139fe6f3bf4069a834
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="CharacterBody3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -9035,4 +9035,4 @@ _subresources={
 }
 }
 }
-gltf/embedded_image_handling=3
+gltf/embedded_image_handling=1

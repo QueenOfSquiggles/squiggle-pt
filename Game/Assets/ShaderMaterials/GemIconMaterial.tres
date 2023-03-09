@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://tbf2a0yhslgy"]
+
+[ext_resource type="Shader" path="res://Game/Assets/ShaderMaterials/gem_icon_colourize.gdshader" id="1_a0epu"]
+
+[resource]
+shader = ExtResource("1_a0epu")
+shader_parameter/colour = Color(0.415686, 0, 1, 1)

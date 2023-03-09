@@ -1,5 +1,5 @@
-using Godot;
 using System;
+using Godot;
 
 public partial class StageDebugger : Node
 {
@@ -12,6 +12,7 @@ public partial class StageDebugger : Node
         {
             if (key.Keycode == Key.KpAdd) GameStages.TriggerNextStage();
             if (key.Keycode == Key.KpSubtract) GameStages.TriggerPreviousStage();
+            if (key.Keycode == Key.KpDivide) GameStages.FoundMemory();
         }
     }
 

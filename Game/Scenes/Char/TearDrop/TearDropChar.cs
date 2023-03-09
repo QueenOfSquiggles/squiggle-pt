@@ -3,7 +3,7 @@ using queen.error;
 using queen.extension;
 using System;
 
-public partial class TearDropChar : Node3D
+public partial class TearDropChar : CharacterBody3D
 {
 
 	[ExportCategory("External")]

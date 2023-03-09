@@ -20,13 +20,13 @@ func _interact() -> void:
 	await anim.animation_finished
 	is_open = !is_open
 
-
-
 func _on_auto_close_timer_timeout() -> void:
 	if anim.is_playing():
 		return
 	anim.play_backwards("Open")
 	await anim.animation_finished
 	is_open = false
-	
-	
+
+func _on_door_rigid_body_on_request_open() -> void:
+	if not is_open:
+		_interact()
