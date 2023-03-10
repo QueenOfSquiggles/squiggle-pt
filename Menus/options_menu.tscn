@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7fyixeftq6wi"]
+[gd_scene load_steps=10 format=3 uid="uid://c7fyixeftq6wi"]
 
 [ext_resource type="Script" path="res://Menus/OptionsMenu.cs" id="1_hipj7"]
-[ext_resource type="Material" uid="uid://b1ehu0o3ymh3v" path="res://Menus/menu_panorama_material.tres" id="2_hfgjw"]
+[ext_resource type="Texture2D" uid="uid://ddfhd1vfnfbr8" path="res://Game/Assets/Screenshots/screenshot_6.png" id="2_ida8h"]
 [ext_resource type="PackedScene" uid="uid://b74414wseyp32" path="res://Menus/OptionsTabs/audio_tab.tscn" id="2_x8b24"]
-[ext_resource type="Texture2D" uid="uid://c8fgnkcmhxaeh" path="res://icon.svg" id="3_fwm44"]
 [ext_resource type="PackedScene" uid="uid://cviculf0f5j6n" path="res://Menus/OptionsTabs/accessibility_tab.tscn" id="3_si5nr"]
 [ext_resource type="Script" path="res://Menus/TabContainerGamepadSupport.cs" id="4_uas64"]
 [ext_resource type="PackedScene" uid="uid://mqlco2j1lvqy" path="res://Menus/OptionsTabs/graphics_tab.tscn" id="5_uxrhy"]
@@ -23,14 +22,13 @@ main_menu_path = "res://Menus/main_menu.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_repeat = 2
-material = ExtResource("2_hfgjw")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_fwm44")
+texture = ExtResource("2_ida8h")
 expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

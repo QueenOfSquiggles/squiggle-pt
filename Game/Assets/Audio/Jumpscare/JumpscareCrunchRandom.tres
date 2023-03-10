@@ -1,0 +1,12 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=3 format=3 uid="uid://ju1pyduvkb5d"]
+
+[ext_resource type="AudioStream" uid="uid://dgtbdaor2c530" path="res://Game/Assets/Audio/Jumpscare/jumpscare_crunch0.ogg" id="1_xus5o"]
+[ext_resource type="AudioStream" uid="uid://daflaqmkntttv" path="res://Game/Assets/Audio/Jumpscare/jumpscare_crunch1.ogg" id="2_hxipr"]
+
+[resource]
+streams_count = 2
+random_pitch = 1.5
+stream_0/stream = ExtResource("1_xus5o")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_hxipr")
+stream_1/weight = 1.0

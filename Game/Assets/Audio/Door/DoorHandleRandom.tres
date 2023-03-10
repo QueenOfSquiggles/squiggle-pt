@@ -1,0 +1,15 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://bcycxi5dlroi2"]
+
+[ext_resource type="AudioStream" uid="uid://bd8hd7o5tfcck" path="res://Game/Assets/Audio/Door/Handle0.ogg" id="1_7tt88"]
+[ext_resource type="AudioStream" uid="uid://c7wsesdiddm6p" path="res://Game/Assets/Audio/Door/Handle1.ogg" id="2_ude0j"]
+[ext_resource type="AudioStream" uid="uid://csmxpwowxw441" path="res://Game/Assets/Audio/Door/Handle2.ogg" id="3_tmddn"]
+
+[resource]
+streams_count = 3
+random_pitch = 1.5
+stream_0/stream = ExtResource("1_7tt88")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_ude0j")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_tmddn")
+stream_2/weight = 1.0

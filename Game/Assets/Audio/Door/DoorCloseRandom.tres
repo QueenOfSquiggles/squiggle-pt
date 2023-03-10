@@ -1,0 +1,15 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://ddivoedtt2b1"]
+
+[ext_resource type="AudioStream" uid="uid://cadfrhl2lh7bc" path="res://Game/Assets/Audio/Door/DoorClose0.ogg" id="1_brbjp"]
+[ext_resource type="AudioStream" uid="uid://0y01je8egoip" path="res://Game/Assets/Audio/Door/DoorClose1.ogg" id="2_t685b"]
+[ext_resource type="AudioStream" uid="uid://hk2xan6ew8dm" path="res://Game/Assets/Audio/Door/DoorClose2.ogg" id="3_715rm"]
+
+[resource]
+streams_count = 3
+random_pitch = 1.5
+stream_0/stream = ExtResource("1_brbjp")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_t685b")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_715rm")
+stream_2/weight = 1.0

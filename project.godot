@@ -28,6 +28,7 @@ config/icon="res://icon.svg"
 
 DynamicContentManager="*res://addons/dynamic-web-content/autoload/dynamic_content_manager.gd"
 Scenes="*res://addons/squiggle_zone/autoload/scenes.tscn"
+BGM="*res://addons/squiggle_zone/autoload/bgm.tscn"
 
 [dotnet]
 

@@ -1,9 +1,9 @@
-using Godot;
-using queen.error;
-using queen.extension;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Godot;
+using queen.error;
+using queen.extension;
 
 public partial class PhaseTeleport : Node, PhaseBase
 {
@@ -11,8 +11,8 @@ public partial class PhaseTeleport : Node, PhaseBase
 	[Export] private float WaitTimeLong = 30.0f;
 	[Export] private float WaitTimeShort = 2.0f;
 	[Export] private float ChanceExactLocation = 0.25f;
-	private Marker3D rocking_chair;
-	private Marker3D couch;
+	private TeardropLocation rocking_chair;
+	private TeardropLocation couch;
 	private AnimationPlayer anim;
 	private Node3D Actor;
 	private Timer MoveTimer;
@@ -21,7 +21,7 @@ public partial class PhaseTeleport : Node, PhaseBase
 	private Node3D PlayerNode;
 
 	private bool ActorIsVisible = false;
-	private Random random = new();
+	private readonly Random random = new();
 	private bool KillingEnabled = true;
 	private bool IsActive = false;
 
@@ -31,7 +31,7 @@ public partial class PhaseTeleport : Node, PhaseBase
 		MoveTimer.Timeout += DoMove;
 	}
 
-	public void Setup(Marker3D p_rocking_chair, Marker3D p_couch, AnimationPlayer p_anim, Node3D actor_node, string loc_group_name)
+	public void Setup(TeardropLocation p_rocking_chair, TeardropLocation p_couch, AnimationPlayer p_anim, Node3D actor_node, string loc_group_name)
     {
 		rocking_chair = p_rocking_chair;
 		couch = p_couch;
@@ -44,7 +44,7 @@ public partial class PhaseTeleport : Node, PhaseBase
     public void Start()
     {
 		IsActive = true;
-		Print.Debug("Teardrop Entering phase: Teleport");
+		// Print.Debug("Teardrop Entering phase: Teleport");
 		PlayerNode = GetTree().GetFirstNodeInGroup("player") as Node3D;
 		DoMove();
     }
@@ -55,10 +55,13 @@ public partial class PhaseTeleport : Node, PhaseBase
 		IsActive = false;
     }
 
+
 	public override void _Process(double _delta)
 	{
 		if (IsActive && anim.CurrentAnimation == "Standing") LookAtPlayer();
 	}
+
+
 
     private void DoMove()
     {
@@ -85,7 +88,7 @@ public partial class PhaseTeleport : Node, PhaseBase
 			MoveTimer.Start(WaitTimeLong);
 			return;
 		} else {
-			Print.Debug($"Attempting to teleport teardrop: {valid_targets.Count} valid positions found. ClosestMarker = {closest_marker.GlobalPosition}");
+			// Print.Debug($"Attempting to teleport teardrop: {valid_targets.Count} valid positions found. ClosestMarker = {closest_marker.GlobalPosition}");
 		}
 
 		PlayerSafetyNet();
@@ -107,12 +110,12 @@ public partial class PhaseTeleport : Node, PhaseBase
 	{
 		var targets = GetTree().GetNodesInGroup(LocationGroupName);
 		List<TeardropLocation> valid_targets = new();
-		Print.Debug($"Found {targets.Count} targets in tree");
+		// Print.Debug($"Found {targets.Count} targets in tree");
 
 		// prune to active locations with correct type
 		foreach (var entry in targets)
 		{
-			if (entry is TeardropLocation tl && tl.IsActive && (tl.GlobalPosition - Actor.GlobalPosition).LengthSquared() > 0.1) 
+			if (entry is TeardropLocation tl && tl.IsActive && tl.IsStandingPosition && (tl.GlobalPosition - Actor.GlobalPosition).LengthSquared() > 0.1) 
 			{
 				valid_targets.Add(tl);
 			}
@@ -122,9 +125,9 @@ public partial class PhaseTeleport : Node, PhaseBase
 
 	private TeardropLocation GetBestLocation(List<TeardropLocation> valid_targets)
 	{
-		// If we win the random, go to perfect spot. Else choose a random location.
-		// Ideally this will prevent Teardrop from camping a specific spot, while still moving erratically.
-		if (random.NextSingle() < ChanceExactLocation) return GetClosestLocation(valid_targets);
+        // If we win the random, go to perfect spot. Else choose a random location.
+        // Ideally this will prevent Teardrop from camping a specific spot, while still moving erratically.
+        if (random.NextSingle() < ChanceExactLocation) return GetClosestLocation(valid_targets);
 		return valid_targets[random.Next() % valid_targets.Count];
 	}
 
@@ -145,16 +148,13 @@ public partial class PhaseTeleport : Node, PhaseBase
 		return closest_marker;
 	}
 
-	private void ManageAnimation(Marker3D location)
+	private void ManageAnimation(TeardropLocation location)
 	{
-		if (MatchLocation(location, rocking_chair)) anim.Play("RockingChair");
-		else if (MatchLocation(location, couch)) anim.Play("Couch");
-		else anim.Play("Standing");
-	}
-
-	private bool MatchLocation(Marker3D a, Marker3D b)
-	{
-		return (a.GlobalPosition - b.GlobalPosition).Length() < 0.2f;
+		if (!anim.HasAnimation(location.AnimKey))
+		{
+            Print.Error($"Failed to play location animation for Teardrop: '{location.AnimKey}'");
+        }
+        anim.Play(location.AnimKey);
 	}
 
 	private void LookAtPlayer()

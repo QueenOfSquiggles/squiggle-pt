@@ -1,30 +1,113 @@
-[gd_scene load_steps=6 format=3 uid="uid://cit8p7u8gt721"]
+[gd_scene load_steps=10 format=3 uid="uid://cit8p7u8gt721"]
 
 [ext_resource type="PackedScene" uid="uid://b8aluxcv731v4" path="res://Game/Assets/Models/Characters/teardrop.glb" id="1_2qi30"]
 [ext_resource type="Script" path="res://Game/Scenes/Char/TearDrop/TeardropJumpscare.cs" id="1_fxyld"]
+[ext_resource type="AudioStream" uid="uid://ju1pyduvkb5d" path="res://Game/Assets/Audio/Jumpscare/JumpscareCrunchRandom.tres" id="3_rhte8"]
+[ext_resource type="AudioStream" uid="uid://nneqsxp24kc3" path="res://Game/Assets/Audio/Jumpscare/jumpscare_breath.ogg" id="4_wcdy3"]
+[ext_resource type="AudioStream" uid="uid://ddivoedtt2b1" path="res://Game/Assets/Audio/Door/DoorCloseRandom.tres" id="5_ybdam"]
+[ext_resource type="AudioStream" uid="uid://bop17nfrxukaq" path="res://Game/Assets/Audio/Cloth/ClothSFX.tres" id="6_f60u6"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_erjhr"]
-font_size = 12
+[sub_resource type="SphereShape3D" id="SphereShape3D_q6m3t"]
 
 [sub_resource type="Animation" id="Animation_gjsvy"]
 resource_name = "JumpscareSequence"
 tracks/0/type = "animation"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewport/teardrop/AnimationPlayer")
+tracks/0/path = NodePath("teardrop/AnimationPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": PackedStringArray("Jumpscare"),
 "times": PackedFloat32Array(0)
 }
-tracks/1/type = "method"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("..")
+tracks/1/path = NodePath("SFX_Crunch")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_rhte8")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_rhte8")
+}],
+"times": PackedFloat32Array(0, 0.7)
+}
+tracks/1/use_blend = true
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX_Breath")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_wcdy3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFX_DoorBeat")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_ybdam")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_ybdam")
+}],
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/3/use_blend = true
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SFX_Cloth")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_f60u6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_f60u6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_f60u6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_f60u6")
+}],
+"times": PackedFloat32Array(0, 0.261244, 0.559809, 0.849043)
+}
+tracks/4/use_blend = true
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -38,66 +121,48 @@ _data = {
 "JumpscareSequence": SubResource("Animation_gjsvy")
 }
 
-[node name="TeardropJumpscare" type="CanvasLayer"]
+[node name="Node3D" type="Node3D"]
 process_mode = 3
-layer = 128
 script = ExtResource("1_fxyld")
 GameOverScene = "res://Game/Scenes/Menus/game_over_bad.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.160784, 0.160784, 0.160784, 0.4)
-
-[node name="Label" type="Label" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = -36.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Boo!"
-label_settings = SubResource("LabelSettings_erjhr")
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(1152, 648)
-render_target_update_mode = 4
-
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.513, -1.032)
-current = true
-fov = 60.0
-near = 0.001
-far = 10.0
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(-0.970416, 0.232796, -0.0640235, 0.237471, 0.872418, -0.427193, -0.0435933, -0.429758, -0.901891, 0, 0, 0)
+[node name="DirectionalLight3D" type="OmniLight3D" parent="."]
+light_energy = 0.2
 shadow_enabled = true
 
-[node name="teardrop" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_2qi30")]
+[node name="teardrop" parent="." instance=ExtResource("1_2qi30")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.457, -0.883)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer"]
+[node name="Skeleton3D" parent="teardrop/Armature" index="0"]
+bones/4/rotation = Quaternion(-0.729017, -0.0253535, -0.0871717, 0.678449)
+bones/6/scale = Vector3(0.715951, 0.715951, 0.715951)
+bones/8/rotation = Quaternion(0.140494, 0.302403, -0.453629, 0.826459)
+bones/9/rotation = Quaternion(0.320217, 0.304974, -0.391549, 0.806933)
+bones/11/rotation = Quaternion(-0.0135408, -0.10275, -0.0863735, 0.990858)
+bones/12/rotation = Quaternion(-0.00428469, 0.0980926, -0.000717294, 0.995168)
+bones/14/rotation = Quaternion(-0.463005, -0.123075, -0.013681, 0.877663)
+bones/15/rotation = Quaternion(0.784994, -0.398549, 0.136505, 0.454214)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="teardrop"]
+shape = SubResource("SphereShape3D_q6m3t")
+disabled = true
+
+[node name="SFX_Crunch" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="SFX_Breath" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="SFX_DoorBeat" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="SFX_Cloth" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "JumpscareSequence"
 libraries = {
 "": SubResource("AnimationLibrary_aahuh")
 }
+
+[editable path="teardrop"]

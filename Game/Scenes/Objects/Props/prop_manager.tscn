@@ -1,10 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://6du2kt4tac3l"]
+[gd_scene load_steps=7 format=3 uid="uid://6du2kt4tac3l"]
 
 [ext_resource type="Script" path="res://Game/Scenes/Objects/Props/PropManager.cs" id="1_n0y5o"]
 [ext_resource type="Material" uid="uid://cvluek2ywidku" path="res://Game/Assets/ShaderMaterials/ItemHighlightMaterial.tres" id="2_hqg2n"]
+[ext_resource type="AudioStream" uid="uid://dbuy3nkpq5bu1" path="res://Game/Assets/Audio/IceCreamCone/GrungyPickup.ogg" id="3_k6uo0"]
+[ext_resource type="AudioStream" uid="uid://yc2ngmuplnh" path="res://Game/Assets/Audio/Glass/GlassClean.ogg" id="4_h4q4u"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rjmel"]
+streams_count = 1
+random_pitch = 1.5
+stream_0/stream = ExtResource("3_k6uo0")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l18yg"]
+streams_count = 1
+random_pitch = 2.0
+stream_0/stream = ExtResource("4_h4q4u")
+stream_0/weight = 1.0
 
 [node name="PropManager" type="Node"]
 script = ExtResource("1_n0y5o")
 active_material = ExtResource("2_hqg2n")
 path_mesh_instance = NodePath("../baseball_01")
 path_interaction_trigger = NodePath("../InteractiveTrigger")
+path_sfx_prop = NodePath("PropFound")
+path_sfx_memory = NodePath("MemoryFound")
+
+[node name="PropFound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_rjmel")
+volume_db = -15.0
+bus = &"SFX"
+
+[node name="MemoryFound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_l18yg")
+volume_db = -15.0
+bus = &"SFX"

@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2vxgdunxwtet"]
+[gd_scene load_steps=13 format=3 uid="uid://b2vxgdunxwtet"]
 
 [ext_resource type="PackedScene" uid="uid://hthgjacd35s4" path="res://Game/Assets/Models/Hallway/door.glb" id="1_xfxm1"]
 [ext_resource type="Script" path="res://Game/Scenes/Objects/WorkingDoorway.gd" id="2_yntri"]
 [ext_resource type="Script" path="res://Game/Scenes/Objects/DoorRigidBody.cs" id="3_swfo4"]
 [ext_resource type="PackedScene" uid="uid://bia227v60iicj" path="res://SquiggleZonePrefabs/Interactables/interactive_trigger.tscn" id="3_tbvgj"]
+[ext_resource type="AudioStream" uid="uid://bcycxi5dlroi2" path="res://Game/Assets/Audio/Door/DoorHandleRandom.tres" id="5_fksvd"]
+[ext_resource type="AudioStream" uid="uid://ddivoedtt2b1" path="res://Game/Assets/Audio/Door/DoorCloseRandom.tres" id="6_bx472"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_je207"]
 size = Vector3(1, 2.07345, 0.0579177)
@@ -13,7 +15,7 @@ size = Vector3(1.09203, 2.38473, 0.125389)
 
 [sub_resource type="Animation" id="Animation_bh0n2"]
 resource_name = "Open"
-length = 0.5
+length = 1.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -43,6 +45,60 @@ tracks/1/keys = {
 "method": &"MarkOpen"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Door/DoorHandle")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_fksvd")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:is_open")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:is_busy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DoorSlam")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_bx472")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jpqh7"]
 length = 0.001
@@ -58,9 +114,106 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:is_open")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:is_busy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5ko41"]
+resource_name = "Close"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.45913, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door/DoorRigidBody")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [true],
+"method": &"MarkOpen"
+}, {
+"args": [false],
+"method": &"MarkOpen"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorSlam")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_bx472")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:is_open")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:is_busy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjt33"]
 _data = {
+"Close": SubResource("Animation_5ko41"),
 "Open": SubResource("Animation_bh0n2"),
 "RESET": SubResource("Animation_jpqh7")
 }
@@ -86,6 +239,11 @@ custom_name = " "
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0262745, 1.09365, -0.0184431)
 shape = SubResource("BoxShape3D_krcac")
 
+[node name="DoorHandle" type="AudioStreamPlayer3D" parent="Door" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.787487, -0.0609559, 0.0184431)
+volume_db = -10.0
+bus = &"SFX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_wjt33")
@@ -93,6 +251,11 @@ libraries = {
 
 [node name="AutoCloseTimer" type="Timer" parent="." index="3"]
 wait_time = 15.0
+
+[node name="DoorSlam" type="AudioStreamPlayer3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12988, 0)
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="OnRequestOpen" from="Door/DoorRigidBody" to="." method="_on_door_rigid_body_on_request_open"]
 [connection signal="OnInteracted" from="Door/Open Door" to="." method="_interact"]

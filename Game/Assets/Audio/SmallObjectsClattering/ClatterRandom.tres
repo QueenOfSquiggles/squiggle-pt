@@ -1,0 +1,22 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://b7ch1fskhc8r3"]
+
+[ext_resource type="AudioStream" uid="uid://bdvlkxqwklcxm" path="res://Game/Assets/Audio/SmallObjectsClattering/Clatter0.ogg" id="1_tj3gp"]
+[ext_resource type="AudioStream" uid="uid://bsmldosqmjuq4" path="res://Game/Assets/Audio/SmallObjectsClattering/Clatter1.ogg" id="2_y74mc"]
+[ext_resource type="AudioStream" uid="uid://cueb17wlknubl" path="res://Game/Assets/Audio/SmallObjectsClattering/Clatter2.ogg" id="3_dy53p"]
+[ext_resource type="AudioStream" uid="uid://chu3kfnsfwwiq" path="res://Game/Assets/Audio/SmallObjectsClattering/Clatter3.ogg" id="4_eu6l6"]
+[ext_resource type="AudioStream" uid="uid://c5vm8v1mn8pdo" path="res://Game/Assets/Audio/SmallObjectsClattering/Clatter4.ogg" id="5_kgfmn"]
+
+[resource]
+streams_count = 5
+random_pitch = 1.5
+random_volume_offset_db = 2.0
+stream_0/stream = ExtResource("1_tj3gp")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_y74mc")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_dy53p")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_eu6l6")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_kgfmn")
+stream_4/weight = 1.0

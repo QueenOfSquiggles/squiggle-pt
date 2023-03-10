@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2vil7s3rpsff"]
+[gd_scene load_steps=15 format=3 uid="uid://c2vil7s3rpsff"]
 
 [ext_resource type="Script" path="res://Game/Scenes/Menus/EndScreenMenu.cs" id="1_niy22"]
 [ext_resource type="Material" uid="uid://b03gumvheeinb" path="res://Game/Assets/ShaderMaterials/GemIconMaterial_Blue.tres" id="1_rk8s6"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://crwvvncyw2unh" path="res://SquiggleZonePrefabs/Effects/cutscene_skipper.tscn" id="5_jn2gd"]
 [ext_resource type="PackedScene" uid="uid://c8kevka1e7pns" path="res://SquiggleZonePrefabs/UI_Tools/ui_sounds.tscn" id="6_wlwlw"]
 [ext_resource type="PackedScene" uid="uid://b2e5mu8luvf1l" path="res://SquiggleZonePrefabs/UI_Tools/request_focus_on_parent.tscn" id="7_n3m5e"]
+[ext_resource type="Script" path="res://addons/squiggle_zone/modules/SceneBGMLoader.cs" id="9_w7jjf"]
+[ext_resource type="AudioStream" uid="uid://cbofr63erde62" path="res://Game/Assets/Audio/BGM/TrueEndingJingle.ogg" id="10_1c80q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i0kfh"]
 font_size = 70
@@ -199,5 +201,13 @@ libraries = {
 
 [node name="CutsceneSkipper" parent="." instance=ExtResource("5_jn2gd")]
 path_animation_player = NodePath("../AnimationPlayer")
+
+[node name="SceneBGMLoader" type="Node" parent="."]
+script = ExtResource("9_w7jjf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SceneBGMLoader"]
+stream = ExtResource("10_1c80q")
+autoplay = true
+bus = &"DronesAndBackground"
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/Button" to="." method="LoadMainMenu"]

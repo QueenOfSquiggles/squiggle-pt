@@ -33,14 +33,14 @@ public partial class VirtualCamera : Marker3D
         }
     }
 
-    public void PushVCam() => GetBrain().PushCamera(this);
+    public void PushVCam() => GetBrain()?.PushCamera(this);
 
-    public void PopVCam() => GetBrain().PopCamera(this);
+    public void PopVCam() => GetBrain()?.PopCamera(this);
 
     private CameraBrain GetBrain()
     {
         var brain = GetTree().GetFirstNodeInGroup("cam_brain") as CameraBrain;
-        Debugging.Assert(brain != null, "VirtualCamera failed to find CameraBrain in scene. Possibly it is missing??");
+        //Debugging.Assert(brain != null, "VirtualCamera failed to find CameraBrain in scene. Possibly it is missing??");
         return brain;
     }
 

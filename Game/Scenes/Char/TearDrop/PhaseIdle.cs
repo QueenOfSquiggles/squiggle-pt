@@ -34,7 +34,7 @@ public partial class PhaseIdle : Node, PhaseBase
 
 	private void OnStageChanged(int stage)
 	{
-		if (stage < StageSwitchToCouch) MoveTo(rocking_chair, "RockingChair");
+		if (stage < StageSwitchToCouch) MoveTo(rocking_chair, "Chair");
 		else MoveTo(couch, "Couch");
 	}
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cskkwxr6lvic7"]
+[gd_scene load_steps=14 format=3 uid="uid://cskkwxr6lvic7"]
 
 [ext_resource type="Texture2D" uid="uid://b722nboamda7" path="res://krita-docs/gem_icon.png" id="1_4g4sn"]
 [ext_resource type="Script" path="res://Game/Scenes/Menus/EndScreenMenu.cs" id="1_o4rec"]
@@ -7,6 +7,8 @@
 [ext_resource type="Material" uid="uid://jtlruxo408ca" path="res://Game/Assets/ShaderMaterials/GemIconMaterial_Pink.tres" id="4_utg1i"]
 [ext_resource type="PackedScene" uid="uid://c8kevka1e7pns" path="res://SquiggleZonePrefabs/UI_Tools/ui_sounds.tscn" id="5_bym7s"]
 [ext_resource type="PackedScene" uid="uid://b2e5mu8luvf1l" path="res://SquiggleZonePrefabs/UI_Tools/request_focus_on_parent.tscn" id="6_tkuda"]
+[ext_resource type="Script" path="res://addons/squiggle_zone/modules/SceneBGMLoader.cs" id="8_udyxk"]
+[ext_resource type="AudioStream" uid="uid://c43bjk7rpoij8" path="res://Game/Assets/Audio/BGM/GameOver.ogg" id="9_3q0hw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h4rb3"]
 font_size = 70
@@ -190,5 +192,13 @@ libraries = {
 
 [node name="CutsceneSkipper" parent="." instance=ExtResource("4_mq2ev")]
 path_animation_player = NodePath("../AnimationPlayer")
+
+[node name="SceneBGMLoader" type="Node" parent="."]
+script = ExtResource("8_udyxk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_3q0hw")
+autoplay = true
+bus = &"DronesAndBackground"
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/Button" to="." method="LoadMainMenu"]

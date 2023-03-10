@@ -17,8 +17,8 @@ public partial class TearDropChar : CharacterBody3D
 
 
 	// Acquired Nodes
-	private Marker3D location_rocking_chair;
-	private Marker3D location_couch;
+	private TeardropLocation location_rocking_chair;
+	private TeardropLocation location_couch;
 	private PhaseController phase_controller;
 	private AnimationPlayer anim;
 

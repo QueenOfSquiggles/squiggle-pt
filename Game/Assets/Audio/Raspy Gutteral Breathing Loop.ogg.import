@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3g8fl1q4gya5"
+path="res://.godot/imported/Raspy Gutteral Breathing Loop.ogg-4e1a5ea9945901a67d8a9824c6c3cdd4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Game/Assets/Audio/Raspy Gutteral Breathing Loop.ogg"
+dest_files=["res://.godot/imported/Raspy Gutteral Breathing Loop.ogg-4e1a5ea9945901a67d8a9824c6c3cdd4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

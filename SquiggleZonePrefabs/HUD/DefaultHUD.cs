@@ -1,9 +1,9 @@
+using System;
+using System.Threading.Tasks;
 using Godot;
 using queen.error;
 using queen.events;
 using queen.extension;
-using System;
-using System.Threading.Tasks;
 
 public partial class DefaultHUD : Control
 {
@@ -99,6 +99,14 @@ public partial class DefaultHUD : Control
 
         prompt_tween.TweenProperty(reticle, "scale", Vector2.Zero, 0.3f);
         prompt_tween.TweenProperty(interaction_prompt, "visible_ratio", 0.0f, 0.1f);
+    }
+
+    public override void _Input(InputEvent e)
+    {
+        if (e is InputEventKey kp && kp.Keycode == Key.F1 && kp.IsPressed())
+        {
+            Visible = !Visible; // toggle visibility of HUD for cinematics or other useful things
+        }
     }
 
 }

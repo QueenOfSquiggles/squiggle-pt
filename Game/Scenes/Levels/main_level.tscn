@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://ptc01npmn442"]
+[gd_scene load_steps=64 format=3 uid="uid://ptc01npmn442"]
 
 [ext_resource type="PackedScene" uid="uid://268fgn52rnve" path="res://Game/Assets/Models/Hallway/hallway.glb" id="1_2p8e8"]
 [ext_resource type="PackedScene" uid="uid://e2sjrp7dx214" path="res://SquiggleZonePrefabs/FPS_Player/first_person_character_controller.tscn" id="2_jdf8f"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bjc5164lfglwe" path="res://Menus/pause_menu_controller.tscn" id="4_lwwvd"]
 [ext_resource type="PackedScene" uid="uid://b7wsrfo7q8m2k" path="res://SquiggleZonePrefabs/Environment/world_env_settings_compliant.tscn" id="5_4qf66"]
 [ext_resource type="PackedScene" uid="uid://bl0j8r0p8h1ka" path="res://Game/Assets/Models/Decoration/modern_arm_chair_01_2k.gltf" id="6_ifqka"]
+[ext_resource type="Script" path="res://Game/Scenes/Levels/ObjectSelectSFX.cs" id="6_lx2w7"]
+[ext_resource type="AudioStream" uid="uid://bl1kihsgtjt1g" path="res://Game/Assets/Audio/Digital/interact_select_blip.wav" id="6_qhucq"]
 [ext_resource type="PackedScene" uid="uid://bap8s7k0my7g3" path="res://Game/Assets/Models/Decoration/cardboard_box_01_2k.gltf" id="7_3g30b"]
 [ext_resource type="PackedScene" uid="uid://cxysv1c8c6oof" path="res://Game/Assets/Models/Decoration/fancy_picture_frame_01_2k.gltf" id="9_85s7b"]
 [ext_resource type="PackedScene" uid="uid://c7ikylq50b8xj" path="res://Game/Assets/Models/Decoration/small_wooden_table_01_2k.gltf" id="10_cire5"]
@@ -52,9 +54,18 @@
 [ext_resource type="PackedScene" uid="uid://8wicgehkfva8" path="res://Game/Scenes/Stages/stage_debugger.tscn" id="51_0swe0"]
 [ext_resource type="Script" path="res://Game/Scenes/Levels/DemoSplit.cs" id="52_hr1wc"]
 [ext_resource type="PackedScene" uid="uid://ld04geok3dc8" path="res://Game/Scenes/Char/TearDrop/tear_drop_character.tscn" id="55_c046f"]
+[ext_resource type="AudioStream" uid="uid://7q0qc14qkoxu" path="res://Game/Assets/Audio/bathroom_loop.ogg" id="56_fdiys"]
 [ext_resource type="PackedScene" uid="uid://6dlxwcgvdkbp" path="res://Game/Scenes/Objects/Props/Memories/potted_plant_memory.tscn" id="56_w77qh"]
 [ext_resource type="PackedScene" uid="uid://j4cy40t8v4v1" path="res://Game/Scenes/Objects/Props/Memories/cassette_player_memory.tscn" id="57_80sy3"]
 [ext_resource type="PackedScene" uid="uid://vqttttm8apkb" path="res://Game/Scenes/Objects/Props/Memories/lantern_memory.tscn" id="57_lfowi"]
+[ext_resource type="AudioStream" uid="uid://bmq1cekkryy1p" path="res://Game/Assets/Audio/fridge_loop.ogg" id="57_yu1c8"]
+[ext_resource type="Script" path="res://addons/squiggle_zone/modules/SceneBGMLoader.cs" id="60_3mvki"]
+[ext_resource type="AudioStream" uid="uid://bvmj247tdyrj3" path="res://Game/Assets/Audio/BGM/LevelMusicLoop.ogg" id="61_r3pqe"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jwa0c"]
+streams_count = 1
+stream_0/stream = ExtResource("6_qhucq")
+stream_0/weight = 1.0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_wff31"]
 vertices = PackedVector3Array(6.61951, 0.178923, -0.0223539, 6.61951, 0.178923, 0.277646, 7.31951, 0.178923, 0.277646, 7.31951, 0.178923, -0.0223539, 8.41951, 0.178923, 2.37765, 8.41951, 0.178923, 4.37765, 8.71951, 0.178923, 4.37765, 8.61951, 0.178923, 1.07765, 7.51951, 0.178923, -0.222354, 7.31951, 0.178923, -0.0223539, 7.31951, 0.178923, 0.277646, 7.51951, 0.178923, 0.877646, 8.01951, 0.178923, 1.07765, 8.11951, 0.178923, -1.02235, 7.51951, 0.178923, -0.622354, 7.51951, 0.178923, -0.222354, 12.4195, 0.178923, 0.277646, 12.9195, 0.178923, -0.0223539, 9.41951, 0.178923, -0.0223539, 9.41951, 0.178923, 0.277646, 8.61951, 0.178923, 1.07765, 9.21951, 0.178923, 0.877646, 9.41951, 0.178923, 0.277646, 9.41951, 0.178923, -0.0223539, 9.21951, 0.178923, -1.92235, 8.31951, 0.178923, -2.22235, 8.01951, 0.178923, -1.92235, 8.11951, 0.178923, -1.02235, 9.21951, 0.178923, -0.222354, 12.6195, 0.178923, 0.477646, 12.6195, 0.178923, 1.57765, 12.9195, 0.178923, 1.67765, 12.9195, 0.178923, -0.0223539, 9.41951, 0.178923, -0.0223539, 9.21951, 0.178923, -0.222354, 8.11951, 0.178923, -1.02235, 7.51951, 0.178923, -0.222354, 8.01951, 0.178923, 1.07765, 8.61951, 0.178923, 1.07765, 12.4195, 0.178923, 0.277646, 12.6195, 0.178923, 0.477646, 12.9195, 0.178923, -0.0223539, 8.01951, 0.178923, 1.07765, 8.01951, 0.178923, 2.17765, 8.41951, 0.178923, 2.37765, 8.61951, 0.178923, 1.07765, 4.01951, 0.178923, 1.97765, 4.41951, 0.178923, 1.37765, 3.61951, 0.178923, 1.37765, 3.71951, 0.178923, 2.67765, 4.01951, 0.178923, 2.47765, 4.01951, 0.178923, 1.97765, 2.91951, 0.178923, 3.27765, 3.71951, 0.178923, 3.27765, 3.71951, 0.178923, 2.67765, 2.71951, 0.178923, 2.77765, 2.91951, 0.178923, 1.37765, 4.01951, 0.178923, 1.97765, 3.61951, 0.178923, 1.37765, 3.41951, 0.178923, 1.17765, 3.11951, 0.178923, 1.17765, 0.519509, 0.178923, 0.277646, 2.91951, 0.178923, 0.277646, 0.0195093, 0.178923, -0.0223539, 2.31951, 0.178923, 2.67765, 2.71951, 0.178923, 2.77765, 3.71951, 0.178923, 2.67765, 4.01951, 0.178923, 1.97765, 2.91951, 0.178923, 1.37765, 2.31951, 0.178923, 1.37765, 0.319509, 0.178923, 0.477646, 0.519509, 0.178923, 0.277646, 0.0195093, 0.178923, -0.0223539, 4.71951, 0.178923, 6.47765, 4.71951, 0.178923, 6.17765, 0.519509, 0.178923, 6.17765, 0.0195093, 0.178923, 6.47765, 0.319509, 0.178923, 5.97765, 0.319509, 0.178923, 0.477646, 0.0195093, 0.178923, -0.0223539, 0.0195093, 0.178923, 6.47765, 0.0195093, 0.178923, 6.47765, 0.519509, 0.178923, 6.17765, 0.319509, 0.178923, 5.97765, 3.61951, 0.178923, 0.277646, 6.61951, 0.178923, 0.277646, 6.61951, 0.178923, -0.0223539, 3.11951, 0.178923, 0.477646, 3.11951, 0.178923, 1.17765, 3.41951, 0.178923, 1.17765, 3.41951, 0.178923, 0.477646, 3.61951, 0.178923, 0.277646, 6.61951, 0.178923, -0.0223539, 0.0195093, 0.178923, -0.0223539, 2.91951, 0.178923, 0.277646, 2.91951, 0.178923, 0.277646, 3.11951, 0.178923, 0.477646, 3.41951, 0.178923, 0.477646, 3.61951, 0.178923, 0.277646, 4.31951, 0.978923, 3.07765, 4.31951, 0.978923, 3.27765, 4.91951, 0.978923, 3.27765, 4.91951, 0.978923, 3.07765, 6.21951, 0.178923, 9.67765, 6.21951, 0.178923, 10.0776, 6.51951, 0.178923, 10.0776, 4.71951, 0.178923, 6.17765, 4.71951, 0.178923, 6.47765, 5.41951, 0.178923, 6.47765, 5.41951, 0.178923, 6.17765, 9.21951, 0.178923, 6.77765, 9.21951, 0.178923, 8.17765, 10.0195, 0.178923, 8.47765, 10.2195, 0.178923, 5.27765, 5.61951, 0.178923, 5.97765, 5.41951, 0.178923, 6.17765, 5.41951, 0.178923, 6.47765, 5.61951, 0.178923, 6.67765, 6.11951, 0.178923, 6.47765, 6.11951, 0.178923, 6.17765, 6.11951, 0.178923, 6.47765, 9.01951, 0.178923, 6.57765, 8.21951, 0.178923, 6.17765, 6.11951, 0.178923, 6.17765, 5.61951, 0.178923, 7.67765, 5.31951, 0.178923, 7.97765, 5.61951, 0.178923, 8.47765, 9.21951, 0.178923, 8.17765, 8.91951, 0.178923, 8.47765, 10.0195, 0.178923, 8.47765, 5.91951, 0.178923, 5.97765, 5.91951, 0.178923, 5.17765, 5.61951, 0.178923, 5.17765, 5.61951, 0.178923, 5.97765, 5.61951, 0.178923, 6.67765, 5.91951, 0.178923, 6.67765, 6.11951, 0.178923, 6.47765, 6.11951, 0.178923, 6.17765, 5.91951, 0.178923, 5.97765, 5.61951, 0.178923, 5.97765, 5.61951, 0.178923, 6.67765, 5.61951, 0.178923, 7.67765, 5.91951, 0.178923, 7.67765, 5.91951, 0.178923, 6.67765, 9.11951, 0.178923, 5.17765, 8.71951, 0.178923, 4.37765, 8.41951, 0.178923, 4.37765, 8.41951, 0.178923, 5.97765, 9.01951, 0.178923, 6.57765, 9.21951, 0.178923, 6.77765, 10.2195, 0.178923, 5.27765, 9.11951, 0.178923, 5.17765, 9.01951, 0.178923, 6.57765, 5.61951, 0.178923, 8.47765, 5.61951, 0.178923, 9.37765, 6.21951, 0.178923, 9.67765, 5.61951, 0.178923, 8.47765, 6.21951, 0.178923, 9.67765, 6.51951, 0.178923, 10.0776, 6.51951, 0.178923, 7.87765, 5.91951, 0.178923, 7.67765, 5.61951, 0.178923, 7.67765, 9.01951, 0.178923, 6.57765, 8.41951, 0.178923, 5.97765, 8.21951, 0.178923, 6.17765, 7.21951, 1.17892, 7.87765, 7.21951, 1.17892, 9.97765, 7.51951, 1.17892, 9.97765, 7.51951, 1.17892, 7.87765, 7.21951, 1.27892, 8.40265, 7.51951, 1.27892, 8.40265)
@@ -85,6 +96,12 @@ final_stage = 5
 path_demo_end_scene = "res://DemoAssets/demo_end_scene.tscn"
 
 [node name="PauseMenuController" parent="Utility" instance=ExtResource("4_lwwvd")]
+
+[node name="ObjectSelectSFX" type="AudioStreamPlayer" parent="Utility"]
+stream = SubResource("AudioStreamRandomizer_jwa0c")
+volume_db = -20.0
+bus = &"SFX"
+script = ExtResource("6_lx2w7")
 
 [node name="First Person Character Controller" parent="." instance=ExtResource("2_jdf8f")]
 transform = Transform3D(-0.999236, 0, -0.0390854, 0, 1, 0, 0.0390854, 0, -0.999236, 8.45308, -0.014102, -1.52116)
@@ -221,6 +238,8 @@ transform = Transform3D(0.0295286, 0, -1.11574, 0, 1.11613, 0, 1.11574, 0, 0.029
 
 [node name="TeardropLocation" parent="Geometry/Decor/Objects/Rockingchair_01_2k" instance=ExtResource("25_7wkkk")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+IsStandingPosition = false
+AnimKey = "Chair"
 
 [node name="Rockingchair_01_2k2" parent="Geometry/Decor/Objects" instance=ExtResource("24_k4pvg")]
 transform = Transform3D(-0.129112, 0, -0.897752, 0, 0.906988, 0, 0.897752, 0, -0.129112, 10.8039, -0.0849875, 6.84354)
@@ -257,6 +276,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.3094
 
 [node name="TeardropLocation" parent="Geometry/Decor/Objects/sofa_03_2k" instance=ExtResource("25_7wkkk")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+IsStandingPosition = false
+AnimKey = "Couch"
 
 [node name="wooden_table_02_2k3" parent="Geometry/Decor/Objects" instance=ExtResource("12_mret4")]
 transform = Transform3D(-0.0478213, 0, 0.998856, 0, 1, 0, -0.998856, 0, -0.0478213, 4.8702, 0.00902387, 8.85049)
@@ -445,3 +466,37 @@ path_location_couch = NodePath("../Geometry/Decor/Objects/sofa_03_2k/TeardropLoc
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_wff31")
+
+[node name="EnvironmentalAudio" type="Node3D" parent="."]
+
+[node name="BathroomLoop" type="AudioStreamPlayer3D" parent="EnvironmentalAudio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24881, 0.739921, 9.48023)
+stream = ExtResource("56_fdiys")
+volume_db = -15.0
+autoplay = true
+bus = &"DronesAndBackground"
+
+[node name="BathroomLoop2" type="AudioStreamPlayer3D" parent="EnvironmentalAudio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8326, 1.4336, 2.65909)
+stream = ExtResource("56_fdiys")
+volume_db = -15.0
+autoplay = true
+bus = &"DronesAndBackground"
+
+[node name="FridgeLoop" type="AudioStreamPlayer3D" parent="EnvironmentalAudio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0231223, 0.462449, 0.115613)
+stream = ExtResource("57_yu1c8")
+volume_db = -15.0
+autoplay = true
+bus = &"DronesAndBackground"
+
+[node name="FridgeLoop2" type="AudioStreamPlayer3D" parent="EnvironmentalAudio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4282, 2.01166, 6.31244)
+stream = ExtResource("57_yu1c8")
+volume_db = -15.0
+autoplay = true
+bus = &"DronesAndBackground"
+
+[node name="SceneBGMLoader" type="Node" parent="."]
+script = ExtResource("60_3mvki")
+music_track = ExtResource("61_r3pqe")

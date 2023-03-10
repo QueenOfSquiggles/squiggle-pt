@@ -1,5 +1,6 @@
 using System;
 using Godot;
+using queen.error;
 using queen.extension;
 
 public partial class PhaseController : Node
@@ -43,7 +44,7 @@ public partial class PhaseController : Node
 		CurrentBase.Stop();
 	}
 
-	public void Setup(Marker3D rocking_chair, Marker3D couch, AnimationPlayer anim)
+	public void Setup(TeardropLocation rocking_chair, TeardropLocation couch, AnimationPlayer anim)
 	{
 		idle.Setup(rocking_chair, couch, anim, actor_node);
 		teleport.Setup(rocking_chair, couch, anim, actor_node, LocationsGroupName);
@@ -71,12 +72,27 @@ public partial class PhaseController : Node
 		if (!body.IsInGroup("player")) return;		
 		if(!CurrentBase.CanKillPlayer()) return;
 		if (DisableDeath) return;
+        DoJumpscare();
+    }
 
-		var node = JumpscareScene.Instantiate();
-		GetTree().Root.AddChild(node);
-		GetTree().Paused = true;
-		actor_node.QueueFree();
+	private void DoJumpscare()
+	{
+        var node = JumpscareScene.Instantiate();
+		var brain = GetTree().GetFirstNodeInGroup("cam_brain") as CameraBrain;
+		if (brain == null) Print.Error("Failed to find Camera Brain in scene!!!");
+     	brain.AddChild(node);
+        actor_node.QueueFree();
+    }
+
+	#if DEBUG
+	public override void _Input(InputEvent e)
+	{
+		if (e is InputEventKey kp && kp.Keycode == Key.Kp4)
+		{
+            DoJumpscare();
+        }
 	}
+	#endif
 
 	
 

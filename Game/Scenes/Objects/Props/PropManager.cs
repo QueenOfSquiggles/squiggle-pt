@@ -18,11 +18,19 @@ public partial class PropManager : Node
     [Export] private NodePath path_mesh_instance;
     [Export] private NodePath path_interaction_trigger;
 
+    [ExportGroup("Paths Internal")]
+    [Export] private NodePath path_sfx_prop;
+    [Export] private NodePath path_sfx_memory;
+
     private MeshInstance3D mesh;
     private InteractiveTrigger trigger;
+    private AudioStreamPlayer sfx_prop;
+    private AudioStreamPlayer sfx_memory;
 
     public override void _Ready()
     {
+        this.GetNode(path_sfx_prop, out sfx_prop);
+        this.GetNode(path_sfx_memory, out sfx_memory);
         this.GetNode(path_mesh_instance, out mesh);
         this.GetNode(path_interaction_trigger, out trigger);
         GameStages.StageChanged += OnStageChanged;
@@ -44,8 +52,12 @@ public partial class PropManager : Node
 
     private void HandleInteraction()
     {
-        if (prop_type == PropType.STAGE_PROGRESSION) GameStages.TriggerNextStage();
-        else {
+        if (prop_type == PropType.STAGE_PROGRESSION) 
+        {
+            sfx_prop.Play();
+            GameStages.TriggerNextStage();
+        } else {
+            sfx_memory.Play();
             trigger.is_active = false;
             GameStages.FoundMemory();
         }
