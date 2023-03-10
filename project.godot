@@ -17,8 +17,8 @@ cache/content_auto_refresh=true
 
 [application]
 
-config/name="Gruesome Claims"
-config/description="A small PT-like game for testing out my game base and finding opportunities to expand upon it"
+config/name="Gruesome Claim"
+config/description="A small horror game where you must investigate an insurance claim in an apartment haunted by the creature known as \"Teardrop\""
 run/main_scene="res://LaunchAnimation/launch_sequence.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/show_image=false

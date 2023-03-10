@@ -140,6 +140,7 @@ tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_quwdf"]
 resource_name = "RESET"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -151,6 +152,16 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -0.314239, 0.068605)]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("SittingInRockingChair"),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="Animation" id="Animation_ebml3"]
@@ -241,21 +252,18 @@ path_anim_driver = NodePath("AnimationDriver")
 transform = Transform3D(1.116, 0, 0, 0, 1.116, 0, 0, 0, 1.116, 0, -0.314239, 0.068605)
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/rotation = Quaternion(0.704505, 0.707107, 0.0606007, 6.58545e-08)
-bones/1/rotation = Quaternion(-0.711765, 0.691388, -0.0755952, -0.0982757)
-bones/2/rotation = Quaternion(-0.57923, -0.18444, 0.175296, 0.774432)
-bones/3/rotation = Quaternion(0.706988, -1.06157e-07, -0.0129656, 0.707107)
-bones/4/rotation = Quaternion(0.00525964, 0.564872, -0.825145, 0.00524574)
-bones/8/rotation = Quaternion(0.0483117, -0.0742021, 0.114479, 0.989472)
-bones/9/rotation = Quaternion(-0.0663667, 0.116556, 0.710484, 0.690813)
-bones/10/rotation = Quaternion(0.0189534, -0.922181, 0.384587, 0.0362781)
-bones/11/rotation = Quaternion(0.460612, -0.0291165, 0.154319, 0.873599)
-bones/12/rotation = Quaternion(-6.33517e-05, 0.000461725, 0.00408543, 0.999992)
-bones/14/rotation = Quaternion(0.640934, -0.378132, -0.0225007, 0.667618)
-bones/15/rotation = Quaternion(-0.342408, -0.336941, -0.349466, 0.804426)
-bones/16/rotation = Quaternion(0.704505, -0.707107, -0.0606007, 7.90253e-08)
-bones/17/rotation = Quaternion(-0.0387068, -0.614983, 0.441864, 0.651962)
-bones/18/rotation = Quaternion(-0.434665, -0.221465, 0.406126, 0.772711)
+bones/0/rotation = Quaternion(-0.599809, 0.460641, 0.44615, 0.478529)
+bones/1/rotation = Quaternion(0.0814029, 0.0768963, -0.642386, 0.758156)
+bones/2/rotation = Quaternion(-0.640821, 0.0190363, 0.0472909, 0.765996)
+bones/4/rotation = Quaternion(0.174649, -5.60311e-23, -9.93853e-24, 0.984631)
+bones/8/rotation = Quaternion(-0.506601, -0.282347, 0.0117729, 0.814553)
+bones/9/rotation = Quaternion(-0.585562, -0.176906, 0.117811, 0.782267)
+bones/12/rotation = Quaternion(-0.000318857, -9.75202e-30, 1.29822e-24, 1)
+bones/14/rotation = Quaternion(-0.473207, 0.256932, 0.00819404, 0.842612)
+bones/15/rotation = Quaternion(-0.560634, 0.184315, -0.132569, 0.796331)
+bones/16/rotation = Quaternion(-0.501447, -0.553359, -0.524707, 0.40869)
+bones/17/rotation = Quaternion(0.0633712, -0.0426197, 0.652538, 0.753897)
+bones/18/rotation = Quaternion(-0.636874, -0.0600828, -0.0398071, 0.767591)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.779722, 0)
@@ -276,7 +284,7 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.35370
 target_position = Vector3(0, 0, -2)
 
 [node name="HeadAttachment" type="BoneAttachment3D" parent="." index="5"]
-transform = Transform3D(1.08462, -0.255249, 0.0623942, 0.23977, 1.06981, 0.208485, -0.107496, -0.189218, 1.09458, -0.00738845, 0.671114, -0.917872)
+transform = Transform3D(1.116, -2.81665e-24, -1.27014e-22, -4.09626e-23, 1.04816, -0.383157, 1.20261e-22, 0.383157, 1.04816, -1.76584e-29, 1.538, 0.190449)
 bone_name = "HeadTop"
 bone_idx = 12
 use_external_skeleton = true
