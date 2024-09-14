@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cws7i30q25w02"
 path.s3tc="res://.godot/imported/small_wooden_table_01_nor_gl_2k.jpg-3af5eb674ef7e7289d643ce336202d94.s3tc.ctex"
+path.etc2="res://.godot/imported/small_wooden_table_01_nor_gl_2k.jpg-3af5eb674ef7e7289d643ce336202d94.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/small_wooden_table_01_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/small_wooden_table_01_nor_gl_2k.jpg-3af5eb674ef7e7289d643ce336202d94.s3tc.ctex"]
+dest_files=["res://.godot/imported/small_wooden_table_01_nor_gl_2k.jpg-3af5eb674ef7e7289d643ce336202d94.s3tc.ctex", "res://.godot/imported/small_wooden_table_01_nor_gl_2k.jpg-3af5eb674ef7e7289d643ce336202d94.etc2.ctex"]
 
 [params]
 

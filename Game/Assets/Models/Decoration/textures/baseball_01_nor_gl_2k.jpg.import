@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://balsh87lw0eha"
 path.s3tc="res://.godot/imported/baseball_01_nor_gl_2k.jpg-b44d33a417d7e74903915c37b5f657ae.s3tc.ctex"
+path.etc2="res://.godot/imported/baseball_01_nor_gl_2k.jpg-b44d33a417d7e74903915c37b5f657ae.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/baseball_01_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/baseball_01_nor_gl_2k.jpg-b44d33a417d7e74903915c37b5f657ae.s3tc.ctex"]
+dest_files=["res://.godot/imported/baseball_01_nor_gl_2k.jpg-b44d33a417d7e74903915c37b5f657ae.s3tc.ctex", "res://.godot/imported/baseball_01_nor_gl_2k.jpg-b44d33a417d7e74903915c37b5f657ae.etc2.ctex"]
 
 [params]
 

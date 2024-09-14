@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vo4t41qvnn1h"
 path.s3tc="res://.godot/imported/Chandelier_03_opacity_2k.jpg-14efa41b87d6f9a447f0b3168499034e.s3tc.ctex"
+path.etc2="res://.godot/imported/Chandelier_03_opacity_2k.jpg-14efa41b87d6f9a447f0b3168499034e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/Chandelier_03_opacity_2k.jpg"
-dest_files=["res://.godot/imported/Chandelier_03_opacity_2k.jpg-14efa41b87d6f9a447f0b3168499034e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Chandelier_03_opacity_2k.jpg-14efa41b87d6f9a447f0b3168499034e.s3tc.ctex", "res://.godot/imported/Chandelier_03_opacity_2k.jpg-14efa41b87d6f9a447f0b3168499034e.etc2.ctex"]
 
 [params]
 

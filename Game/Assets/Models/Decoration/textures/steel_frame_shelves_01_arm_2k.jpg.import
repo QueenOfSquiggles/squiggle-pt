@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c00shpn7k7vwo"
 path.s3tc="res://.godot/imported/steel_frame_shelves_01_arm_2k.jpg-006e0fe6df632964b5d38e346bb34ed8.s3tc.ctex"
+path.etc2="res://.godot/imported/steel_frame_shelves_01_arm_2k.jpg-006e0fe6df632964b5d38e346bb34ed8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/steel_frame_shelves_01_arm_2k.jpg"
-dest_files=["res://.godot/imported/steel_frame_shelves_01_arm_2k.jpg-006e0fe6df632964b5d38e346bb34ed8.s3tc.ctex"]
+dest_files=["res://.godot/imported/steel_frame_shelves_01_arm_2k.jpg-006e0fe6df632964b5d38e346bb34ed8.s3tc.ctex", "res://.godot/imported/steel_frame_shelves_01_arm_2k.jpg-006e0fe6df632964b5d38e346bb34ed8.etc2.ctex"]
 
 [params]
 

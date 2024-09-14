@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqxo0hqwm5wk0"
 path.s3tc="res://.godot/imported/Camera_01_strap_arm_2k.jpg-c9dcb61a4ab126db5020e701e4b3bf58.s3tc.ctex"
+path.etc2="res://.godot/imported/Camera_01_strap_arm_2k.jpg-c9dcb61a4ab126db5020e701e4b3bf58.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/Camera_01_strap_arm_2k.jpg"
-dest_files=["res://.godot/imported/Camera_01_strap_arm_2k.jpg-c9dcb61a4ab126db5020e701e4b3bf58.s3tc.ctex"]
+dest_files=["res://.godot/imported/Camera_01_strap_arm_2k.jpg-c9dcb61a4ab126db5020e701e4b3bf58.s3tc.ctex", "res://.godot/imported/Camera_01_strap_arm_2k.jpg-c9dcb61a4ab126db5020e701e4b3bf58.etc2.ctex"]
 
 [params]
 

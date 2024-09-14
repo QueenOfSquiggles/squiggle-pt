@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ogudf1ohdmc2"
+path="res://.godot/imported/teardrop_sofa_03_diff_2k.jpg-a3f9bf5e8916924240ad7a421923a763.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "1477c9aba64c0e92d3398c1f0d2e022a"
+}
+
+[deps]
+
+source_file="res://Game/Assets/Models/Characters/teardrop_sofa_03_diff_2k.jpg"
+dest_files=["res://.godot/imported/teardrop_sofa_03_diff_2k.jpg-a3f9bf5e8916924240ad7a421923a763.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

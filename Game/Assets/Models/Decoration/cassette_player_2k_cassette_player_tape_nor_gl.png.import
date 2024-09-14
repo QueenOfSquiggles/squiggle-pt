@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://svysxak12xyu"
 path.s3tc="res://.godot/imported/cassette_player_2k_cassette_player_tape_nor_gl.png-432f6f6020ca3a4eb77de9d3fff47df2.s3tc.ctex"
+path.etc2="res://.godot/imported/cassette_player_2k_cassette_player_tape_nor_gl.png-432f6f6020ca3a4eb77de9d3fff47df2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/cassette_player_2k_cassette_player_tape_nor_gl.png"
-dest_files=["res://.godot/imported/cassette_player_2k_cassette_player_tape_nor_gl.png-432f6f6020ca3a4eb77de9d3fff47df2.s3tc.ctex"]
+dest_files=["res://.godot/imported/cassette_player_2k_cassette_player_tape_nor_gl.png-432f6f6020ca3a4eb77de9d3fff47df2.s3tc.ctex", "res://.godot/imported/cassette_player_2k_cassette_player_tape_nor_gl.png-432f6f6020ca3a4eb77de9d3fff47df2.etc2.ctex"]
 
 [params]
 

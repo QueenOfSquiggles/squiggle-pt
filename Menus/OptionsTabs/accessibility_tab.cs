@@ -1,8 +1,7 @@
 using Godot;
 using queen.data;
-using queen.error;
 using queen.extension;
-using System;
+using squiggle_zone.modules.data;
 
 public partial class accessibility_tab : PanelContainer
 {
@@ -57,22 +56,22 @@ public partial class accessibility_tab : PanelContainer
         slider_screen_shake_duration.ValueChanged += SetMaxScreenShakeDuration;
         slider_max_volume.ValueChanged += SetMaxAudio;
         slider_time_scale.ValueChanged += SetEngineTimeScale;
-        
+
     }
 
     private void OnNoFlashingLightsChanged(bool do_no_flashing_lights)
         => Access.Instance.PreventFlashingLights = do_no_flashing_lights;
-    private void SetRumbleStrength(double value) 
-        => Effects.Instance.RumbleStrength = (float)value;        
-    private void SetScreenShakeStrength(double value) 
+    private void SetRumbleStrength(double value)
+        => Effects.Instance.RumbleStrength = (float)value;
+    private void SetScreenShakeStrength(double value)
         => Effects.Instance.ScreenShakeStrength = (float)value;
-    private void SetMaxRumbleDuration(double value) 
+    private void SetMaxRumbleDuration(double value)
         => Effects.Instance.MaxRumbleDuration = (float)value;
-    private void SetMaxScreenShakeDuration(double value) 
+    private void SetMaxScreenShakeDuration(double value)
         => Effects.Instance.MaxScreenShakeDuration = (float)value;
-    private void SetMaxAudio(double value) 
+    private void SetMaxAudio(double value)
         => Access.Instance.AudioDecibelLimit = (float)value;
-    private void SetEngineTimeScale(double value) 
+    private void SetEngineTimeScale(double value)
         => Access.Instance.EngineTimeScale = (float)value;
 
     private void OnFontSelected(long index)
@@ -83,7 +82,7 @@ public partial class accessibility_tab : PanelContainer
         Access.Instance.FontOption = target;
         FontHasChanged = true;
     }
-    
+
     public void ApplyChanges()
     {
         Access.SaveSettings();

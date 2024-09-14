@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://47k85wou58bg"
 path.s3tc="res://.godot/imported/power_box_01_nor_gl_2k.jpg-85a3b79f2b3814d2413ce1c624647e8d.s3tc.ctex"
+path.etc2="res://.godot/imported/power_box_01_nor_gl_2k.jpg-85a3b79f2b3814d2413ce1c624647e8d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/power_box_01_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/power_box_01_nor_gl_2k.jpg-85a3b79f2b3814d2413ce1c624647e8d.s3tc.ctex"]
+dest_files=["res://.godot/imported/power_box_01_nor_gl_2k.jpg-85a3b79f2b3814d2413ce1c624647e8d.s3tc.ctex", "res://.godot/imported/power_box_01_nor_gl_2k.jpg-85a3b79f2b3814d2413ce1c624647e8d.etc2.ctex"]
 
 [params]
 

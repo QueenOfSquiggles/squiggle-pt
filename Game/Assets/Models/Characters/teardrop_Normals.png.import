@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ygs14ksouhxi"
 path.s3tc="res://.godot/imported/teardrop_Normals.png-be20686421e76388e918cd9a41611ffd.s3tc.ctex"
+path.etc2="res://.godot/imported/teardrop_Normals.png-be20686421e76388e918cd9a41611ffd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Characters/teardrop_Normals.png"
-dest_files=["res://.godot/imported/teardrop_Normals.png-be20686421e76388e918cd9a41611ffd.s3tc.ctex"]
+dest_files=["res://.godot/imported/teardrop_Normals.png-be20686421e76388e918cd9a41611ffd.s3tc.ctex", "res://.godot/imported/teardrop_Normals.png-be20686421e76388e918cd9a41611ffd.etc2.ctex"]
 
 [params]
 

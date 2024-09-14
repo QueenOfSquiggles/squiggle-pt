@@ -6,16 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://yc2ngmuplnh" path="res://Game/Assets/Audio/Glass/GlassClean.ogg" id="4_h4q4u"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rjmel"]
-streams_count = 1
 random_pitch = 1.5
+streams_count = 1
 stream_0/stream = ExtResource("3_k6uo0")
-stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l18yg"]
-streams_count = 1
 random_pitch = 2.0
+streams_count = 1
 stream_0/stream = ExtResource("4_h4q4u")
-stream_0/weight = 1.0
 
 [node name="PropManager" type="Node"]
 script = ExtResource("1_n0y5o")

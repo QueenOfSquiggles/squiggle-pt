@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://csi4x0oyctlb2"
 path.s3tc="res://.godot/imported/flathead_screwdriver_2k_flathead_screwdriver_nor_gl.png-3c7de38440168889c7b55f785e01669d.s3tc.ctex"
+path.etc2="res://.godot/imported/flathead_screwdriver_2k_flathead_screwdriver_nor_gl.png-3c7de38440168889c7b55f785e01669d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/flathead_screwdriver_2k_flathead_screwdriver_nor_gl.png"
-dest_files=["res://.godot/imported/flathead_screwdriver_2k_flathead_screwdriver_nor_gl.png-3c7de38440168889c7b55f785e01669d.s3tc.ctex"]
+dest_files=["res://.godot/imported/flathead_screwdriver_2k_flathead_screwdriver_nor_gl.png-3c7de38440168889c7b55f785e01669d.s3tc.ctex", "res://.godot/imported/flathead_screwdriver_2k_flathead_screwdriver_nor_gl.png-3c7de38440168889c7b55f785e01669d.etc2.ctex"]
 
 [params]
 

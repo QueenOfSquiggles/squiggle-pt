@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3u2kj5feh2ie"
 path.s3tc="res://.godot/imported/hallway_weathered_planks_nor_gl_8k.png-b3089397c6fd2063a98fe31e7b3b8840.s3tc.ctex"
+path.etc2="res://.godot/imported/hallway_weathered_planks_nor_gl_8k.png-b3089397c6fd2063a98fe31e7b3b8840.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Hallway/hallway_weathered_planks_nor_gl_8k.png"
-dest_files=["res://.godot/imported/hallway_weathered_planks_nor_gl_8k.png-b3089397c6fd2063a98fe31e7b3b8840.s3tc.ctex"]
+dest_files=["res://.godot/imported/hallway_weathered_planks_nor_gl_8k.png-b3089397c6fd2063a98fe31e7b3b8840.s3tc.ctex", "res://.godot/imported/hallway_weathered_planks_nor_gl_8k.png-b3089397c6fd2063a98fe31e7b3b8840.etc2.ctex"]
 
 [params]
 

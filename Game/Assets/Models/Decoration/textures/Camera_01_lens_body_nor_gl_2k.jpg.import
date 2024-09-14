@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnb2itxhew6hn"
 path.s3tc="res://.godot/imported/Camera_01_lens_body_nor_gl_2k.jpg-33d0959b455d9019dd4dd91c724b1633.s3tc.ctex"
+path.etc2="res://.godot/imported/Camera_01_lens_body_nor_gl_2k.jpg-33d0959b455d9019dd4dd91c724b1633.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/Camera_01_lens_body_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/Camera_01_lens_body_nor_gl_2k.jpg-33d0959b455d9019dd4dd91c724b1633.s3tc.ctex"]
+dest_files=["res://.godot/imported/Camera_01_lens_body_nor_gl_2k.jpg-33d0959b455d9019dd4dd91c724b1633.s3tc.ctex", "res://.godot/imported/Camera_01_lens_body_nor_gl_2k.jpg-33d0959b455d9019dd4dd91c724b1633.etc2.ctex"]
 
 [params]
 

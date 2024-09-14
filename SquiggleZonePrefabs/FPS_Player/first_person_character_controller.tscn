@@ -1,17 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://e2sjrp7dx214"]
+[gd_scene load_steps=9 format=3 uid="uid://e2sjrp7dx214"]
 
 [ext_resource type="Script" path="res://SquiggleZonePrefabs/FPS_Player/PlayerController.cs" id="1_a4hb8"]
 [ext_resource type="PackedScene" uid="uid://bilaqqj3v26t7" path="res://SquiggleZonePrefabs/CameraUtilities/virtual_camera.tscn" id="2_ctyh5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bput"]
-albedo_color = Color(0.368627, 0.054902, 0.607843, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_egvq0"]
-radius = 0.2
-height = 1.6
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ovivv"]
-radius = 0.2
+radius = 0.25
 height = 1.6
 
 [sub_resource type="Animation" id="Animation_fvani"]
@@ -34,19 +27,13 @@ states/Test/node = SubResource("AnimationNodeAnimation_26orf")
 states/Test/position = Vector2(300, 106)
 transitions = ["Start", "Test", SubResource("AnimationNodeStateMachineTransition_uoswe")]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_jgq6h"]
-
 [node name="First Person Character Controller" type="CharacterBody3D" groups=["player"]]
+floor_block_on_wall = false
+safe_margin = 0.01
 script = ExtResource("1_a4hb8")
 cam_arm_path = NodePath("CameraArm")
 anim_tree_path = NodePath("AnimationTree")
 raycast_path = NodePath("CameraArm/VirtualCamera/InteractionRay")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.801277, 0)
-material_override = SubResource("StandardMaterial3D_5bput")
-cast_shadow = 0
-mesh = SubResource("CapsuleMesh_egvq0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.814102, 0)
@@ -73,5 +60,3 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_fs7a4")
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_jgq6h")

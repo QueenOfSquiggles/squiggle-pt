@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8t0741h6esby"
 path.s3tc="res://.godot/imported/vintage_pocket_watch_nor_gl_2k.jpg-4858314348dd938da4fc0b70bf7a6613.s3tc.ctex"
+path.etc2="res://.godot/imported/vintage_pocket_watch_nor_gl_2k.jpg-4858314348dd938da4fc0b70bf7a6613.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/vintage_pocket_watch_nor_gl_2k.jpg"
-dest_files=["res://.godot/imported/vintage_pocket_watch_nor_gl_2k.jpg-4858314348dd938da4fc0b70bf7a6613.s3tc.ctex"]
+dest_files=["res://.godot/imported/vintage_pocket_watch_nor_gl_2k.jpg-4858314348dd938da4fc0b70bf7a6613.s3tc.ctex", "res://.godot/imported/vintage_pocket_watch_nor_gl_2k.jpg-4858314348dd938da4fc0b70bf7a6613.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b46hskoqg17ue"
 path.s3tc="res://.godot/imported/tire_pump_diff_2k.jpg-a5f2a2dfef1fb4ed870cc615c9b03134.s3tc.ctex"
+path.etc2="res://.godot/imported/tire_pump_diff_2k.jpg-a5f2a2dfef1fb4ed870cc615c9b03134.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/tire_pump_diff_2k.jpg"
-dest_files=["res://.godot/imported/tire_pump_diff_2k.jpg-a5f2a2dfef1fb4ed870cc615c9b03134.s3tc.ctex"]
+dest_files=["res://.godot/imported/tire_pump_diff_2k.jpg-a5f2a2dfef1fb4ed870cc615c9b03134.s3tc.ctex", "res://.godot/imported/tire_pump_diff_2k.jpg-a5f2a2dfef1fb4ed870cc615c9b03134.etc2.ctex"]
 
 [params]
 

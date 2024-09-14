@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dgkvq6lb1rcnb"
+path.s3tc="res://.godot/imported/hallway_grey_plaster_diff_2k.jpg-5ed7e428a02412166580f59ec0e2f2f6.s3tc.ctex"
+path.etc2="res://.godot/imported/hallway_grey_plaster_diff_2k.jpg-5ed7e428a02412166580f59ec0e2f2f6.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4a5f1ea38defa9d314439ffd9f3da225"
+}
+
+[deps]
+
+source_file="res://Game/Assets/Models/Hallway/hallway_grey_plaster_diff_2k.jpg"
+dest_files=["res://.godot/imported/hallway_grey_plaster_diff_2k.jpg-5ed7e428a02412166580f59ec0e2f2f6.s3tc.ctex", "res://.godot/imported/hallway_grey_plaster_diff_2k.jpg-5ed7e428a02412166580f59ec0e2f2f6.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

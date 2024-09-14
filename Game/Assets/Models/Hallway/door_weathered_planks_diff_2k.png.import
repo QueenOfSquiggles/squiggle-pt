@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl8obnk6uj16d"
 path.s3tc="res://.godot/imported/door_weathered_planks_diff_2k.png-f5ad8d0ae37f96e834a41bf8c66ed76a.s3tc.ctex"
+path.etc2="res://.godot/imported/door_weathered_planks_diff_2k.png-f5ad8d0ae37f96e834a41bf8c66ed76a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Hallway/door_weathered_planks_diff_2k.png"
-dest_files=["res://.godot/imported/door_weathered_planks_diff_2k.png-f5ad8d0ae37f96e834a41bf8c66ed76a.s3tc.ctex"]
+dest_files=["res://.godot/imported/door_weathered_planks_diff_2k.png-f5ad8d0ae37f96e834a41bf8c66ed76a.s3tc.ctex", "res://.godot/imported/door_weathered_planks_diff_2k.png-f5ad8d0ae37f96e834a41bf8c66ed76a.etc2.ctex"]
 
 [params]
 

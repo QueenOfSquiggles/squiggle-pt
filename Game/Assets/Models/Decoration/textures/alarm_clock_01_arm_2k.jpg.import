@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://diynfynfpopsk"
 path.s3tc="res://.godot/imported/alarm_clock_01_arm_2k.jpg-4e35ef5e3b42e3c875833e50411cc9e3.s3tc.ctex"
+path.etc2="res://.godot/imported/alarm_clock_01_arm_2k.jpg-4e35ef5e3b42e3c875833e50411cc9e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/alarm_clock_01_arm_2k.jpg"
-dest_files=["res://.godot/imported/alarm_clock_01_arm_2k.jpg-4e35ef5e3b42e3c875833e50411cc9e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/alarm_clock_01_arm_2k.jpg-4e35ef5e3b42e3c875833e50411cc9e3.s3tc.ctex", "res://.godot/imported/alarm_clock_01_arm_2k.jpg-4e35ef5e3b42e3c875833e50411cc9e3.etc2.ctex"]
 
 [params]
 

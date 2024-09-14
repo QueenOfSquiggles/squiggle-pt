@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://e0s6ha4ylarf"
 path.s3tc="res://.godot/imported/hallway_grey_plaster_diff_2k.png-77481356031f4a83b42ce9e04153aa22.s3tc.ctex"
+path.etc2="res://.godot/imported/hallway_grey_plaster_diff_2k.png-77481356031f4a83b42ce9e04153aa22.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Hallway/hallway_grey_plaster_diff_2k.png"
-dest_files=["res://.godot/imported/hallway_grey_plaster_diff_2k.png-77481356031f4a83b42ce9e04153aa22.s3tc.ctex"]
+dest_files=["res://.godot/imported/hallway_grey_plaster_diff_2k.png-77481356031f4a83b42ce9e04153aa22.s3tc.ctex", "res://.godot/imported/hallway_grey_plaster_diff_2k.png-77481356031f4a83b42ce9e04153aa22.etc2.ctex"]
 
 [params]
 

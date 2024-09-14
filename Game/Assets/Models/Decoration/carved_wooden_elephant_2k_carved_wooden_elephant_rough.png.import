@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ypq56u816d3w"
 path.s3tc="res://.godot/imported/carved_wooden_elephant_2k_carved_wooden_elephant_rough.png-0bc2b5639aeddcc97ad92be1b8ecbd42.s3tc.ctex"
+path.etc2="res://.godot/imported/carved_wooden_elephant_2k_carved_wooden_elephant_rough.png-0bc2b5639aeddcc97ad92be1b8ecbd42.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/carved_wooden_elephant_2k_carved_wooden_elephant_rough.png"
-dest_files=["res://.godot/imported/carved_wooden_elephant_2k_carved_wooden_elephant_rough.png-0bc2b5639aeddcc97ad92be1b8ecbd42.s3tc.ctex"]
+dest_files=["res://.godot/imported/carved_wooden_elephant_2k_carved_wooden_elephant_rough.png-0bc2b5639aeddcc97ad92be1b8ecbd42.s3tc.ctex", "res://.godot/imported/carved_wooden_elephant_2k_carved_wooden_elephant_rough.png-0bc2b5639aeddcc97ad92be1b8ecbd42.etc2.ctex"]
 
 [params]
 

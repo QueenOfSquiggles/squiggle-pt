@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dehsj7jivnux0"
 path.s3tc="res://.godot/imported/vintage_pocket_watch_2k_vintage_pocket_watch_nor_gl.png-62aefa158b61fdaa9132ee31b6ee5f07.s3tc.ctex"
+path.etc2="res://.godot/imported/vintage_pocket_watch_2k_vintage_pocket_watch_nor_gl.png-62aefa158b61fdaa9132ee31b6ee5f07.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/vintage_pocket_watch_2k_vintage_pocket_watch_nor_gl.png"
-dest_files=["res://.godot/imported/vintage_pocket_watch_2k_vintage_pocket_watch_nor_gl.png-62aefa158b61fdaa9132ee31b6ee5f07.s3tc.ctex"]
+dest_files=["res://.godot/imported/vintage_pocket_watch_2k_vintage_pocket_watch_nor_gl.png-62aefa158b61fdaa9132ee31b6ee5f07.s3tc.ctex", "res://.godot/imported/vintage_pocket_watch_2k_vintage_pocket_watch_nor_gl.png-62aefa158b61fdaa9132ee31b6ee5f07.etc2.ctex"]
 
 [params]
 

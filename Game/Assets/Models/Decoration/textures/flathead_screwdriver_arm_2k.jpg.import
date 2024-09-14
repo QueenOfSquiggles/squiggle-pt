@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci75bkmxrqti5"
 path.s3tc="res://.godot/imported/flathead_screwdriver_arm_2k.jpg-ada07d9c8c9c34dac4782de11bc00a32.s3tc.ctex"
+path.etc2="res://.godot/imported/flathead_screwdriver_arm_2k.jpg-ada07d9c8c9c34dac4782de11bc00a32.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/flathead_screwdriver_arm_2k.jpg"
-dest_files=["res://.godot/imported/flathead_screwdriver_arm_2k.jpg-ada07d9c8c9c34dac4782de11bc00a32.s3tc.ctex"]
+dest_files=["res://.godot/imported/flathead_screwdriver_arm_2k.jpg-ada07d9c8c9c34dac4782de11bc00a32.s3tc.ctex", "res://.godot/imported/flathead_screwdriver_arm_2k.jpg-ada07d9c8c9c34dac4782de11bc00a32.etc2.ctex"]
 
 [params]
 

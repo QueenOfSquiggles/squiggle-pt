@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c88fidnnsg54b"
 path.s3tc="res://.godot/imported/door_grey_plaster_nor_4k.png-f3c6cf5c843b0a5bad9e9216b38a7ae1.s3tc.ctex"
+path.etc2="res://.godot/imported/door_grey_plaster_nor_4k.png-f3c6cf5c843b0a5bad9e9216b38a7ae1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Hallway/door_grey_plaster_nor_4k.png"
-dest_files=["res://.godot/imported/door_grey_plaster_nor_4k.png-f3c6cf5c843b0a5bad9e9216b38a7ae1.s3tc.ctex"]
+dest_files=["res://.godot/imported/door_grey_plaster_nor_4k.png-f3c6cf5c843b0a5bad9e9216b38a7ae1.s3tc.ctex", "res://.godot/imported/door_grey_plaster_nor_4k.png-f3c6cf5c843b0a5bad9e9216b38a7ae1.etc2.ctex"]
 
 [params]
 

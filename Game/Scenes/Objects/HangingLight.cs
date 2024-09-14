@@ -1,7 +1,7 @@
-using Godot;
-using queen.data;
-using queen.extension;
 using System;
+using Godot;
+using queen.extension;
+using squiggle_zone.modules.data;
 
 public partial class HangingLight : Node3D
 {
@@ -19,9 +19,9 @@ public partial class HangingLight : Node3D
         GameStages.StageChanged += BreakLights;
     }
 
-    public override void _ExitTree() 
+    public override void _ExitTree()
         => GameStages.StageChanged -= BreakLights;
-    
+
 
     private void BreakLights(int stage)
     {

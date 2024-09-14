@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5rqvx6y33oqr"
 path.s3tc="res://.godot/imported/wicker_basket_01_2k_wicker_basket_01_diff.png-ca1561d1d362e0f8738273fbef12c14c.s3tc.ctex"
+path.etc2="res://.godot/imported/wicker_basket_01_2k_wicker_basket_01_diff.png-ca1561d1d362e0f8738273fbef12c14c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/wicker_basket_01_2k_wicker_basket_01_diff.png"
-dest_files=["res://.godot/imported/wicker_basket_01_2k_wicker_basket_01_diff.png-ca1561d1d362e0f8738273fbef12c14c.s3tc.ctex"]
+dest_files=["res://.godot/imported/wicker_basket_01_2k_wicker_basket_01_diff.png-ca1561d1d362e0f8738273fbef12c14c.s3tc.ctex", "res://.godot/imported/wicker_basket_01_2k_wicker_basket_01_diff.png-ca1561d1d362e0f8738273fbef12c14c.etc2.ctex"]
 
 [params]
 

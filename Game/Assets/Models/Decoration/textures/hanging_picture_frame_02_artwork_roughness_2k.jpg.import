@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tl4dmsodj2rq"
 path.s3tc="res://.godot/imported/hanging_picture_frame_02_artwork_roughness_2k.jpg-057b04e54a448c61e726057993d28b58.s3tc.ctex"
+path.etc2="res://.godot/imported/hanging_picture_frame_02_artwork_roughness_2k.jpg-057b04e54a448c61e726057993d28b58.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/hanging_picture_frame_02_artwork_roughness_2k.jpg"
-dest_files=["res://.godot/imported/hanging_picture_frame_02_artwork_roughness_2k.jpg-057b04e54a448c61e726057993d28b58.s3tc.ctex"]
+dest_files=["res://.godot/imported/hanging_picture_frame_02_artwork_roughness_2k.jpg-057b04e54a448c61e726057993d28b58.s3tc.ctex", "res://.godot/imported/hanging_picture_frame_02_artwork_roughness_2k.jpg-057b04e54a448c61e726057993d28b58.etc2.ctex"]
 
 [params]
 

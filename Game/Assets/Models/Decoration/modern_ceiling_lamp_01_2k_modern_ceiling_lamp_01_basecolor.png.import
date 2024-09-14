@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnp7xsxysht75"
 path.s3tc="res://.godot/imported/modern_ceiling_lamp_01_2k_modern_ceiling_lamp_01_basecolor.png-a5092b658a46d0da80d079e5e2d98702.s3tc.ctex"
+path.etc2="res://.godot/imported/modern_ceiling_lamp_01_2k_modern_ceiling_lamp_01_basecolor.png-a5092b658a46d0da80d079e5e2d98702.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/modern_ceiling_lamp_01_2k_modern_ceiling_lamp_01_basecolor.png"
-dest_files=["res://.godot/imported/modern_ceiling_lamp_01_2k_modern_ceiling_lamp_01_basecolor.png-a5092b658a46d0da80d079e5e2d98702.s3tc.ctex"]
+dest_files=["res://.godot/imported/modern_ceiling_lamp_01_2k_modern_ceiling_lamp_01_basecolor.png-a5092b658a46d0da80d079e5e2d98702.s3tc.ctex", "res://.godot/imported/modern_ceiling_lamp_01_2k_modern_ceiling_lamp_01_basecolor.png-a5092b658a46d0da80d079e5e2d98702.etc2.ctex"]
 
 [params]
 

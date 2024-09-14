@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://4p03bcxerqfl"
 path.s3tc="res://.godot/imported/hanging_picture_frame_02_arm_2k.jpg-6f5d878e828c48ac31333cfa0c5cd08b.s3tc.ctex"
+path.etc2="res://.godot/imported/hanging_picture_frame_02_arm_2k.jpg-6f5d878e828c48ac31333cfa0c5cd08b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Game/Assets/Models/Decoration/textures/hanging_picture_frame_02_arm_2k.jpg"
-dest_files=["res://.godot/imported/hanging_picture_frame_02_arm_2k.jpg-6f5d878e828c48ac31333cfa0c5cd08b.s3tc.ctex"]
+dest_files=["res://.godot/imported/hanging_picture_frame_02_arm_2k.jpg-6f5d878e828c48ac31333cfa0c5cd08b.s3tc.ctex", "res://.godot/imported/hanging_picture_frame_02_arm_2k.jpg-6f5d878e828c48ac31333cfa0c5cd08b.etc2.ctex"]
 
 [params]
 

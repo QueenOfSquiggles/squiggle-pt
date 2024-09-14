@@ -252,18 +252,33 @@ path_anim_driver = NodePath("AnimationDriver")
 transform = Transform3D(1.116, 0, 0, 0, 1.116, 0, 0, 0, 1.116, 0, -0.314239, 0.068605)
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/rotation = Quaternion(-0.599809, 0.460641, 0.44615, 0.478529)
-bones/1/rotation = Quaternion(0.0814029, 0.0768963, -0.642386, 0.758156)
-bones/2/rotation = Quaternion(-0.640821, 0.0190363, 0.0472909, 0.765996)
+bones/0/rotation = Quaternion(0.599809, -0.460641, -0.44615, -0.478529)
+bones/1/rotation = Quaternion(0.0815237, 0.0768055, -0.642402, 0.758139)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.640927, 0.01904, 0.0473059, 0.765906)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.706988, -9.18671e-08, -0.0129656, 0.707107)
+bones/3/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(0.174649, -5.60311e-23, -9.93853e-24, 0.984631)
-bones/8/rotation = Quaternion(-0.506601, -0.282347, 0.0117729, 0.814553)
-bones/9/rotation = Quaternion(-0.585562, -0.176906, 0.117811, 0.782267)
-bones/12/rotation = Quaternion(-0.000318857, -9.75202e-30, 1.29822e-24, 1)
-bones/14/rotation = Quaternion(-0.473207, 0.256932, 0.00819404, 0.842612)
-bones/15/rotation = Quaternion(-0.560634, 0.184315, -0.132569, 0.796331)
-bones/16/rotation = Quaternion(-0.501447, -0.553359, -0.524707, 0.40869)
-bones/17/rotation = Quaternion(0.0633712, -0.0426197, 0.652538, 0.753897)
-bones/18/rotation = Quaternion(-0.636874, -0.0600828, -0.0398071, 0.767591)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.532305, -0.498955, -0.498955, -0.467695)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.506701, -0.282272, 0.011769, 0.814517)
+bones/9/rotation = Quaternion(-0.585386, -0.176912, 0.117807, 0.782398)
+bones/10/rotation = Quaternion(8.26038e-08, -2.17465e-37, 3.91015e-31, 1)
+bones/11/rotation = Quaternion(-7.03857e-08, 1.57772e-30, -8.54361e-31, 1)
+bones/12/rotation = Quaternion(1.82316e-08, -9.95214e-30, 1.29821e-24, 1)
+bones/13/rotation = Quaternion(0.532305, 0.498955, 0.498955, -0.467695)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.473306, 0.256879, 0.00819804, 0.842572)
+bones/15/rotation = Quaternion(-0.560491, 0.184323, -0.132557, 0.796432)
+bones/16/rotation = Quaternion(0.501447, 0.553359, 0.524707, -0.40869)
+bones/17/rotation = Quaternion(0.0632323, -0.0427263, 0.65252, 0.753919)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(-0.636742, -0.0600853, -0.0397913, 0.767702)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.706988, 7.90251e-08, 0.0129656, 0.707107)
+bones/19/scale = Vector3(1, 1, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.779722, 0)
@@ -284,7 +299,7 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 0.35370
 target_position = Vector3(0, 0, -2)
 
 [node name="HeadAttachment" type="BoneAttachment3D" parent="." index="5"]
-transform = Transform3D(1.116, -2.81665e-24, -1.27014e-22, -4.09626e-23, 1.04816, -0.383157, 1.20261e-22, 0.383157, 1.04816, -1.76584e-29, 1.538, 0.190449)
+transform = Transform3D(1.116, -2.89763e-24, -1.27014e-22, -4.09629e-23, 1.04792, -0.383826, 1.20262e-22, 0.383826, 1.04792, -1.66549e-29, 1.538, 0.190449)
 bone_name = "HeadTop"
 bone_idx = 12
 use_external_skeleton = true
@@ -320,6 +335,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00553, 0)
 aabb = AABB(-0.607756, -0.843813, -0.561233, 1.21551, 1.68763, 1.12247)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="7"]
+simplify_path = true
+simplify_epsilon = 0.5
 
 [node name="PhaseControllers" type="Node" parent="." index="8"]
 script = ExtResource("3_stac2")
@@ -353,10 +370,10 @@ ObjectAvoidanceScalar = 0.4
 wait_time = 5.0
 
 [node name="AnimationDriver" type="AnimationPlayer" parent="." index="9"]
-autoplay = "RockingChair"
 libraries = {
 "": SubResource("AnimationLibrary_wdttk")
 }
+autoplay = "RockingChair"
 
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="." index="10"]
 volume_db = -40.0
@@ -367,4 +384,4 @@ bus = &"CreatureSounds"
 [connection signal="screen_exited" from="HeadAttachment/WeepingAngelScreenNotifer" to="PhaseControllers/PhaseWeepingAngel" method="OnExitScreen"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnEnterVisiblity"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="PhaseControllers/PhaseTeleport" method="OnExitVisiblity"]
-[connection signal="timeout" from="PhaseControllers/PhaseWeepingAngel/Timer" to="PhaseControllers/PhaseWeepingAngel" method="UpdateTarget" flags=18]
+[connection signal="timeout" from="PhaseControllers/PhaseWeepingAngel/Timer" to="PhaseControllers/PhaseWeepingAngel" method="UpdateTarget"]

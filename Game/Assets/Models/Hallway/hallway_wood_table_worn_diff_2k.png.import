@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsey08fonswnc"
 path.s3tc="res://.godot/imported/hallway_wood_table_worn_diff_2k.png-114995639eae203c670ab96753577bea.s3tc.ctex"
+path.etc2="res://.godot/imported/hallway_wood_table_worn_diff_2k.png-114995639eae203c670ab96753577bea.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Game/Assets/Models/Hallway/hallway_wood_table_worn_diff_2k.png"
-dest_files=["res://.godot/imported/hallway_wood_table_worn_diff_2k.png-114995639eae203c670ab96753577bea.s3tc.ctex"]
+dest_files=["res://.godot/imported/hallway_wood_table_worn_diff_2k.png-114995639eae203c670ab96753577bea.s3tc.ctex", "res://.godot/imported/hallway_wood_table_worn_diff_2k.png-114995639eae203c670ab96753577bea.etc2.ctex"]
 
 [params]
 
